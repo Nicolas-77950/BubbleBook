@@ -3,7 +3,7 @@ BubbleBook est un projet permettant d'avoir un annuaire des toiletteurs aux alen
 
 ## Prérequis
 
--   `yarn` installés: Assure-toi d'avoir la dernière version de yarn installée sur ton ordinateur. Tu peux vérifier en ouvrant ton terminal et en tapant yarn -v.   
+-   `yarn` installés: Assure-toi d'avoir la dernière version de yarn installée sur ton ordinateur. Tu peux vérifier en ouvrant ton terminal et en tapant `yarn -v`.   
 -   Une bonne compréhension de base de `JavaScript`: Avoir des notions de JavaScript est essentiel pour travailler avec React et TypeScript.   
 -   Un éditeur de code: `Visual Studio Code`.
 
