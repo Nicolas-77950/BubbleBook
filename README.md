@@ -24,7 +24,7 @@ BubbleBook est un projet permettant d'avoir un annuaire des toiletteurs aux alen
 
 		https://github.com/Nicolas-77950/BubbleBook.git
 		
-		OR
+OR
 		
 		git@github.com:Nicolas-77950/BubbleBook.git
 
