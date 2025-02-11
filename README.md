@@ -22,8 +22,10 @@ BubbleBook est un projet permettant d'avoir un annuaire des toiletteurs aux alen
 
 - Cloner le repository : 
 
-		https://github.com/Nicolas-77950/BubbleBook.git	
-OR		
+		https://github.com/Nicolas-77950/BubbleBook.git
+  
+  		OR
+  
 	 	git@github.com:Nicolas-77950/BubbleBook.git
 
 - Aller dans le terminal, éxécuter la commande `yarn install`, puis `yarn start`. Vous devriez avoir accès au projet.
