@@ -1,13 +1,27 @@
-import "./App.css";
-import React from "react";
-import RegisterLogin from "./pages/RegisterLogin";
-import "./App.css";
+<<<<<<< HEAD
+import React, { useState } from 'react';
+import Connexion from './pages/connexion';
+=======
 
-const App: React.FC  = () => {
+import React, { useState } from 'react';
+import Connexion from './pages/connexion';
+
+>>>>>>> feature/register
+import './App.css';
+import Register from './register'; 
+
+const App: React.FC = () => {
   return (
+<<<<<<< HEAD
     <div>
-      <RegisterLogin/>
-      </div>
+      <Connexion />
+=======
+
+    <div className="App">
+      <Register /> 
+
+>>>>>>> feature/register
+    </div>
   )
 }
 
