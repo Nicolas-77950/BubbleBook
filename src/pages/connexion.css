@@ -1,0 +1,95 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+form {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    gap: 30px;
+    border-radius: 10px;
+}
+
+.textConnexion h2 {
+    color: black;
+    font-size:300%;
+}
+
+.textConnexion {
+    display: flex;
+    justify-content: center;
+}
+
+::placeholder {
+    color:#FBE6E8;
+    font-size:150%;
+}
+
+form {
+    background-color: white;
+}
+
+input {
+    border: none;
+    border-radius: 10px;
+    width: 400px;
+    padding: 15px;
+}
+
+.Password input {
+    background-color: #EF5773;
+}
+
+.Email input {
+    background-color: #FAB2BB;
+}
+
+.Submit button {
+    background-color: #FBE6E8;
+    border: none;
+    border-radius: 10px;
+    color: #EF5773;
+    font-size: 125%;
+    padding: 10px;
+}
+
+.signup {
+    color: black;
+}
+
+.signup a {
+    color: #EF5773;
+}
+
+@media (max-width: 768px) {
+    input {
+        width: auto;
+    }
+
+    .Submit button {
+        font-size: 90%;
+        padding: 5px;
+    }
+
+    .textConnexion h2 {
+        font-size: 200%;
+    }
+
+    ::placeholder {
+        font-size: 120%;
+    }
+
+    input {
+        padding: 10px;
+    }
+
+    form {
+        gap: 20px;
+    }
+}
+
