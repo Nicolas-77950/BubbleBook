@@ -64,6 +64,7 @@ input {
 
 .signup a {
     color: #EF5773;
+    font-weight: bold;
 }
 
 @media (max-width: 768px) {
