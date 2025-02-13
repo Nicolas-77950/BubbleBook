@@ -1,0 +1,97 @@
+body {
+   background-color: #FFE4E4;
+   font-family: sans-serif;
+}
+
+form {
+   background-color: white;
+   padding: 40px;
+   border-radius: 10px;
+   margin: 50px auto;
+   width: 350px;
+}
+
+h2 {
+   font-size: 2em;
+   font-weight: bold;
+   margin-bottom: 30px;
+   text-align: center;
+}
+
+input[type="text"] {
+   width: 100%;
+   padding: 15px;
+   margin-bottom: 20px;
+   border: 1px solid #ccc;
+   border-radius: 10px;
+   background-color: #FAB2BB;
+   box-sizing: border-box;
+}
+
+input[type="email"] {
+   width: 100%;
+   padding: 15px;
+   margin-bottom: 20px;
+   border: 1px solid #ccc;
+   border-radius: 10px;
+   background-color: rgba(234, 86, 113, 255);
+   box-sizing: border-box;
+}
+
+input[id="password"] {
+   width: 100%;
+   padding: 15px;
+   margin-bottom: 20px;
+   border: 1px solid #ccc;
+   border-radius: 10px;
+   background-color: rgba(234, 86, 113, 255);
+   box-sizing: border-box;
+}
+
+input[id="confirmPassword"] {
+   width: 100%;
+   padding: 15px;
+   margin-bottom: 20px;
+   border: 1px solid #ccc;
+   border-radius: 10px;
+   background-color: #FAB2BB;
+   box-sizing: border-box;
+}
+
+input::placeholder {
+   text-align: left;
+   color: white;
+}
+
+button {
+   background-color: #e0f2f7;
+   color: black;
+   padding: 15px;
+   border: none;
+   border-radius: 10px;
+   cursor: pointer;
+   width: 100%;
+}
+
+button:hover {
+   background-color: #cce5ff;
+}
+
+@media (max-width: 400px) {
+   form {
+       width: 90%;
+       padding: 15px;
+   }
+
+   h2 {
+       font-size: 1em;
+   }
+
+   input[type="text"],
+   input[type="email"],
+   input[type="password"],
+   button {
+       font-size: 0.9em;
+       padding: 8px;
+   }
+}

@@ -1,0 +1,43 @@
+.logo img {
+    width: auto;
+    height: 60px;
+}
+
+header {
+    background-image: url('../Images/cat.jpg');
+    width: 100%;
+    height: 300px;
+    background-size: 100%;
+    background-position: center; 
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.navbarre {
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.logoDiv {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.nav a, .nav div a, .logoDiv a{
+    text-decoration: none;
+    color: black;
+}
+
+.logoDiv a {
+    font-weight: bold;
+}

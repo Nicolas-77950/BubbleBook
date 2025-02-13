@@ -2,16 +2,12 @@ import React, { useState } from 'react';
 import Connexion from './pages/connexion';
 
 import './App.css';
-import Register from './register'; 
+import HeaderPages from './pages/headerPages'; 
 
 const App: React.FC = () => {
   return (
     <div>
-      <Connexion />
-
-    <div className="App">
-      <Register /> 
-    </div>
+      <HeaderPages />
     </div>
   )
 }
