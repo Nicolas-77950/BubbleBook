@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import './register.css';
 
 const Register: React.FC = () => {
-  const [isToilettor, setIsToilettor] = useState(0); 
+  const [isToilettor, setIsToilettor] = useState(0);
   const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
+  const [firstName, setFirstName] = useState(''); 
+  const [lastName, setLastName] = useState(''); 
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
@@ -14,8 +15,9 @@ const Register: React.FC = () => {
     const user = {
       email,
       password,
-      first_name: name,
-      id_groomer: isToilettor, 
+      first_name: firstName, 
+      last_name: lastName,  
+      id_groomer: isToilettor,
     };
 
     try {
@@ -52,8 +54,8 @@ const Register: React.FC = () => {
         <input
           type="checkbox"
           id="toilettor"
-          checked={isToilettor === 1} 
-          onChange={(e) => setIsToilettor(e.target.checked ? 1 : 0)} 
+          checked={isToilettor === 1}
+          onChange={(e) => setIsToilettor(e.target.checked ? 1 : 0)}
         />
       </label>
 
@@ -67,11 +69,20 @@ const Register: React.FC = () => {
       />
 
       <input
-        placeholder='Saisissez votre nom/prenom'
+        placeholder='Saisissez votre prénom' 
         type="text"
-        id="name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
+        id="firstName"
+        value={firstName}
+        onChange={(e) => setFirstName(e.target.value)}
+        required
+      />
+
+      <input
+        placeholder='Saisissez votre nom' 
+        type="text"
+        id="lastName"
+        value={lastName}
+        onChange={(e) => setLastName(e.target.value)}
         required
       />
 
