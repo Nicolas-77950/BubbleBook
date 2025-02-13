@@ -8,8 +8,34 @@ const Register: React.FC = () => {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
+
+    const user = {
+      email,
+      password,
+      first_name: name,
+      id_groomer: isToilettor,
+    };
+
+    try {
+      const response = await fetch('http://localhost:5000/api/user/insert', {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(user),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log('User inserted with ID:', data.id);
+      } else {
+        console.error('Failed to insert user');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
 
     if (password !== confirmPassword) {
       alert("C'est pas le même mot de passe sale caca.");
