@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './register.css';
 
 const Register: React.FC = () => {
-  const [isToilettor, setIsToilettor] = useState(false);
+  const [isToilettor, setIsToilettor] = useState(0); 
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
@@ -15,7 +15,7 @@ const Register: React.FC = () => {
       email,
       password,
       first_name: name,
-      id_groomer: isToilettor,
+      id_groomer: isToilettor, 
     };
 
     try {
@@ -42,7 +42,7 @@ const Register: React.FC = () => {
       return;
     }
   };
-    
+
   return (
     <form onSubmit={handleSubmit}>
       <h2>Inscription</h2>
@@ -52,12 +52,11 @@ const Register: React.FC = () => {
         <input
           type="checkbox"
           id="toilettor"
-          checked={isToilettor}
-          onChange={(e) => setIsToilettor(e.target.checked)}
+          checked={isToilettor === 1} 
+          onChange={(e) => setIsToilettor(e.target.checked ? 1 : 0)} 
         />
       </label>
 
-      
       <input
         placeholder='Saisissez votre email'
         type="email"
@@ -67,7 +66,6 @@ const Register: React.FC = () => {
         required
       />
 
-      
       <input
         placeholder='Saisissez votre nom/prenom'
         type="text"
@@ -77,7 +75,6 @@ const Register: React.FC = () => {
         required
       />
 
-      
       <input
         placeholder='Saisissez votre mot de passe'
         type="password"
@@ -87,7 +84,6 @@ const Register: React.FC = () => {
         required
       />
 
-      
       <input
         placeholder='Confirmer votre mot de passe'
         type="password"
