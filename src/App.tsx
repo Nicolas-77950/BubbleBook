@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Connexion from './pages/connexion';
 
 import './App.css';
-import Register from './register'; 
+import Register from './pages/register'; 
 
 const App: React.FC = () => {
   return (
