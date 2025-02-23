@@ -48,7 +48,7 @@ const Register: React.FC = () => {
   return (
     <div>
       <HeaderPages />
-      <form onSubmit={handleSubmit}>
+      <form className='formRegister' onSubmit={handleSubmit}>
         <h2>Inscription</h2>
 
         <label htmlFor="toilettor">
@@ -106,7 +106,7 @@ const Register: React.FC = () => {
           required
         />
 
-        <button type="submit">S'inscrire</button>
+        <button className='buttonRegister' type="submit">S'inscrire</button>
       </form>
     </div>
   );

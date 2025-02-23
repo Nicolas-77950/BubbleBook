@@ -4,7 +4,7 @@ body {
    margin: 0%;
 }
 
-form {
+.formRegister {
    background-color: white;
    padding: 40px;
    border-radius: 10px;
@@ -12,14 +12,14 @@ form {
    max-width: 300px;
 }
 
-form h2 {
+.formRegister h2 {
    font-size: 2em;
    font-weight: bold;
    margin-bottom: 30px;
    text-align: center;
 }
 
-input[type="text"] {
+.formRegister input[type="text"] {
    width: 100%;
    padding: 15px;
    margin-bottom: 20px;
@@ -29,7 +29,7 @@ input[type="text"] {
    box-sizing: border-box;
 }
 
-input[type="email"] {
+.formRegister input[type="email"] {
    width: 100%;
    padding: 15px;
    margin-bottom: 20px;
@@ -39,7 +39,7 @@ input[type="email"] {
    box-sizing: border-box;
 }
 
-input[id="password"] {
+.formRegister input[id="password"] {
    width: 100%;
    padding: 15px;
    margin-bottom: 20px;
@@ -49,7 +49,7 @@ input[id="password"] {
    box-sizing: border-box;
 }
 
-input[id="confirmPassword"] {
+.formRegister input[id="confirmPassword"] {
    width: 100%;
    padding: 15px;
    margin-bottom: 20px;
@@ -59,12 +59,12 @@ input[id="confirmPassword"] {
    box-sizing: border-box;
 }
 
-input::placeholder {
+.formRegister input::placeholder {
    text-align: left;
    color: white;
 }
 
-button {
+.buttonRegister {
    background-color: #e0f2f7;
    color: black;
    padding: 15px;
@@ -74,24 +74,24 @@ button {
    width: 100%;
 }
 
-button:hover {
+.buttonRegister:hover {
    background-color: #cce5ff;
 }
 
 @media (max-width: 400px) {
-   form {
+   .formRegister {
        width: 90%;
        padding: 15px;
    }
 
-   h2 {
+   .formRegister h2 {
        font-size: 1em;
    }
 
-   input[type="text"],
-   input[type="email"],
-   input[type="password"],
-   button {
+   .formRegister input[type="text"],
+   .formRegister input[type="email"],
+   .formRegister input[type="password"],
+   .buttonRegister {
        font-size: 0.9em;
        padding: 8px;
    }

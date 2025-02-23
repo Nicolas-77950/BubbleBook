@@ -37,12 +37,12 @@ body {
     justify-content: center;
 }
 
-::placeholder {
+.Email ::placeholder, .Password ::placeholder {
     color:#FBE6E8;
     font-size:150%;
 }
 
-input {
+.Email input, .Password input {
     border: none;
     border-radius: 10px;
     width: 400px;
@@ -70,15 +70,16 @@ input {
     color: black;
 }
 
-.signup link {
+.signup a {
     color: #EF5773;
     font-weight: bold;
     text-decoration: none;
 }
 
 @media (max-width: 768px) {
-    input {
+    .Email input, .Password input {
         width: auto;
+        padding: 10px;
     }
 
     .Submit button {
@@ -90,15 +91,11 @@ input {
         font-size: 200%;
     }
 
-    ::placeholder {
+    .Email::placeholder, .Password::placeholder {
         font-size: 120%;
     }
 
-    input {
-        padding: 10px;
-    }
-
-    form {
+    .formConnexion {
         gap: 20px;
     }
 }
