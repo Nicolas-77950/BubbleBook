@@ -30,20 +30,23 @@ const HeaderPages: React.FC = () => {
                     <div >
                         <a href="#"><h2>Vous êtes toiletteur ?</h2></a>
                     </div>
-                    <a href="#"><FontAwesomeIcon icon={faBook} size="2x" /></a>
+                    <a href="#"><FontAwesomeIcon icon={faBook} size="lg" /></a>
                     <a className='connect' href="#"><h2>Se connecter</h2></a>
                 </div>
 
                 <div className='burgerNav' ref={menuRef}>
                     <button onClick={() => setIsOpen(!isOpen)} className='burgerButton' aria-label="Ouvrir le menu">
-                        <FontAwesomeIcon icon={isOpen ? faTimes : faBars} size="2x" />
+                        <FontAwesomeIcon icon={faBars} size='2x'/>
                     </button>
 
                     {isOpen && (
                         <div className='burgerMenu'>
-                            <a href="#" onClick={() => setIsOpen(false)}><h2>Vous êtes toiletteur ?</h2></a>
-                            <a href="#" onClick={() => setIsOpen(false)}><h2>Agenda</h2></a>
-                            <a href="#" onClick={() => setIsOpen(false)}><h2>Se connecter</h2></a>
+                            <div className='cross' onClick={() => setIsOpen(false)}><FontAwesomeIcon icon={faTimes} size='lg'/></div>
+                            <div className='redirectionPage'> 
+                                <a href="#" onClick={() => setIsOpen(false)}><h3>Vous êtes toiletteur ?</h3></a>
+                                <a href="#" onClick={() => setIsOpen(false)}><h3>Agenda</h3></a>
+                                <a href="#" onClick={() => setIsOpen(false)}><h3>Se connecter</h3></a>
+                            </div>
                         </div>
                     )}
                 </div>
