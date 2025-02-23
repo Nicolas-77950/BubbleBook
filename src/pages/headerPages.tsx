@@ -9,13 +9,22 @@ const HeaderPages: React.FC = () => {
     const menuRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
-        const handleClickOutside = (event: MouseEvent) => {
+        console.log("État du menu burger:", isOpen);
+
+        const handleClickOutside = (event: MouseEvent | TouchEvent) => {
             if (menuRef.current && !menuRef.current.contains(event.target as Node)) {setIsOpen(false)};
         };
 
-        if (isOpen) {document.addEventListener("mousedown", handleClickOutside)};
+        if (isOpen) {
+            document.addEventListener("mousedown", handleClickOutside);
+            document.addEventListener("touchstart", handleClickOutside);
+        };
 
-        return () => {document.removeEventListener("mousedown", handleClickOutside)};
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+            document.removeEventListener("touchstart", handleClickOutside);
+
+        };
     }, [isOpen]);
 
     return (

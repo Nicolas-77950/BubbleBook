@@ -1,6 +1,9 @@
 body {
     display: flex;
     justify-content: center;
+    background-color: #FFE4E4;
+    flex-direction: column;
+    margin: 0%;
 }
 
 form {
@@ -13,6 +16,13 @@ form {
     padding: 30px;
     gap: 30px;
     border-radius: 10px;
+}
+
+.postConnexion {
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    margin: auto;
 }
 
 .textConnexion h2 {

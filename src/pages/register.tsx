@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './register.css';
+import HeaderPages from './headerPages';
 
 const Register: React.FC = () => {
   const [isToilettor, setIsToilettor] = useState(0);
@@ -45,66 +46,69 @@ const Register: React.FC = () => {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Inscription</h2>
+    <div>
+      <HeaderPages />
+      <form onSubmit={handleSubmit}>
+        <h2>Inscription</h2>
 
-      <label htmlFor="toilettor">
-        Vous êtes toiletteur ?
+        <label htmlFor="toilettor">
+          Vous êtes toiletteur ?
+          <input
+            type="checkbox"
+            id="toilettor"
+            checked={isToilettor === 1}
+            onChange={(e) => setIsToilettor(e.target.checked ? 1 : 0)}
+          />
+        </label>
+
         <input
-          type="checkbox"
-          id="toilettor"
-          checked={isToilettor === 1}
-          onChange={(e) => setIsToilettor(e.target.checked ? 1 : 0)}
+          placeholder='Saisissez votre email'
+          type="email"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
         />
-      </label>
 
-      <input
-        placeholder='Saisissez votre email'
-        type="email"
-        id="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
+        <input
+          placeholder='Saisissez votre prénom' 
+          type="text"
+          id="firstName"
+          value={firstName}
+          onChange={(e) => setFirstName(e.target.value)}
+          required
+        />
 
-      <input
-        placeholder='Saisissez votre prénom' 
-        type="text"
-        id="firstName"
-        value={firstName}
-        onChange={(e) => setFirstName(e.target.value)}
-        required
-      />
+        <input
+          placeholder='Saisissez votre nom' 
+          type="text"
+          id="lastName"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+          required
+        />
 
-      <input
-        placeholder='Saisissez votre nom' 
-        type="text"
-        id="lastName"
-        value={lastName}
-        onChange={(e) => setLastName(e.target.value)}
-        required
-      />
+        <input
+          placeholder='Saisissez votre mot de passe'
+          type="password"
+          id="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
 
-      <input
-        placeholder='Saisissez votre mot de passe'
-        type="password"
-        id="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        required
-      />
+        <input
+          placeholder='Confirmer votre mot de passe'
+          type="password"
+          id="confirmPassword"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
+          required
+        />
 
-      <input
-        placeholder='Confirmer votre mot de passe'
-        type="password"
-        id="confirmPassword"
-        value={confirmPassword}
-        onChange={(e) => setConfirmPassword(e.target.value)}
-        required
-      />
-
-      <button type="submit">S'inscrire</button>
-    </form>
+        <button type="submit">S'inscrire</button>
+      </form>
+    </div>
   );
 };
 
