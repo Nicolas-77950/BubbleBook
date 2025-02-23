@@ -4,11 +4,11 @@ import HeaderPages from './headerPages';
 
 const Register: React.FC = () => {
   const [isToilettor, setIsToilettor] = useState<number>(0);
-  const [email, setEmail] = useState<String>('');
-  const [firstName, setFirstName] = useState<String>(''); 
-  const [lastName, setLastName] = useState<String>(''); 
-  const [password, setPassword] = useState<String>('');
-  const [confirmPassword, setConfirmPassword] = useState<String>('');
+  const [email, setEmail] = useState<string | undefined>('');
+  const [firstName, setFirstName] = useState<string | undefined>(''); 
+  const [lastName, setLastName] = useState<string | undefined>(''); 
+  const [password, setPassword] = useState<string | undefined>('');
+  const [confirmPassword, setConfirmPassword] = useState<string | undefined>('');
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
