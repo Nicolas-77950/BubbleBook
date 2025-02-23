@@ -43,11 +43,11 @@ header {
     align-items: center;
 }
 
-.logoDiv a h3{
+.logoDiv a h2{
     font-weight: bold;
 }
 
-.nav div a h3{
+.nav div a h2{
     color: #FED5D7;
 }
 
