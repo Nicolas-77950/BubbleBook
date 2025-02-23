@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './connexion.css';
 import HeaderPages from './headerPages';
+import { Link } from "react-router-dom";
 
 
 const Connexion: React.FC = () => {
@@ -15,7 +16,7 @@ const Connexion: React.FC = () => {
                     <h2>Connexion</h2>
                 </div>
                 <div className='postConnexion'>
-                    <><form action="POST">
+                    <><form className='formConnexion' action="POST">
                         <div className='Email'>
                             <input
                                 type="email"
@@ -42,7 +43,7 @@ const Connexion: React.FC = () => {
                             <button type="submit">Se connecter</button>
                         </div>
                         <p className="signup">
-                        Aucun compte ? <a href="#">Inscription</a>
+                        Aucun compte ? <Link to="/register">Inscription</Link>
                         </p>
                     </form></>
                 </div>

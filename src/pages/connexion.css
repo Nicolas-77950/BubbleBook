@@ -6,7 +6,7 @@ body {
     margin: 0%;
 }
 
-form {
+.formConnexion {
     width: auto;
     height: auto;
     display: flex;
@@ -16,6 +16,8 @@ form {
     padding: 30px;
     gap: 30px;
     border-radius: 10px;
+    background-color: white;
+    margin: 20px;
 }
 
 .postConnexion {
@@ -38,11 +40,6 @@ form {
 ::placeholder {
     color:#FBE6E8;
     font-size:150%;
-}
-
-form {
-    background-color: white;
-    margin: 20px;
 }
 
 input {
@@ -73,9 +70,10 @@ input {
     color: black;
 }
 
-.signup a {
+.signup link {
     color: #EF5773;
     font-weight: bold;
+    text-decoration: none;
 }
 
 @media (max-width: 768px) {
