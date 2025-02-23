@@ -3,6 +3,7 @@ import './headerPages.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import logo from '../Images/Design_sans_titre-removebg-preview.png'
+import { Link } from 'react-router-dom';
 
 const HeaderPages: React.FC = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -37,10 +38,10 @@ const HeaderPages: React.FC = () => {
 
                 <div className='nav'>
                     <div >
-                        <a href="#"><h2>Vous êtes toiletteur ?</h2></a>
+                        <Link to="/register"><h2>Vous êtes toiletteur ?</h2></Link>
                     </div>
                     <a href="#"><FontAwesomeIcon icon={faBook} size="lg" /></a>
-                    <a className='connect' href="#"><h2>Se connecter</h2></a>
+                    <Link className='connect' to="/RegisterLogin"><h2>Se connecter</h2></Link>
                 </div>
 
                 <div className='burgerNav' ref={menuRef}>

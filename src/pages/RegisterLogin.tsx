@@ -1,6 +1,7 @@
 import React from 'react';
 import "./RegisterLogin.css";
 import HeaderPages from './headerPages';
+import { Link } from 'react-router-dom';
 
 const RegisterLogin: React.FC = () => {
   return (
@@ -14,14 +15,14 @@ const RegisterLogin: React.FC = () => {
           <div className="auth-section">
             <a className="auth-text"><h3>Nouveau sur BlueBook ?</h3></a>
             <button className="signup-btn">
-              <a href="#">S'inscrire</a>
+              <Link to="/register">S'inscrire</Link>
             </button>
           </div>
 
           <div className="auth-section">
             <a className="auth-text"><h3>J'ai déjà un compte BlueBook</h3></a>
             <button className="login-btn">
-              <a href="#">Se connecter</a>
+              <Link to="/connexion">Se connecter</Link>
             </button>
           </div>
         </div>
