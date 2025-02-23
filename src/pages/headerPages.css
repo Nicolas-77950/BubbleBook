@@ -110,13 +110,19 @@ header {
         flex-direction: column;
         background-color:#FED5D7;
         padding: 0 20px;
-        max-width: 500px;
+        max-width: 700px;
+        min-width: 200px;
         border-radius: 10px;
         z-index: 100;
+        text-align:center;
     }
 
     .redirectionPage a {
         color: #EF5773;
         text-decoration: none;
+    }
+
+    .cross {
+        text-align: end;
     }
 }
