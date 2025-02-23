@@ -61,6 +61,10 @@ header {
     color: #EF5773;
 }
 
+.nav div a {
+    height: 40px
+}
+
 @media (max-width: 768px) {
     .navbarre {
         flex-direction: column;
