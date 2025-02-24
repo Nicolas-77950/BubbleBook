@@ -53,9 +53,9 @@ const HeaderPages: React.FC = () => {
                         <div className='burgerMenu'>
                             <div className='cross' onClick={() => setIsOpen(false)}><FontAwesomeIcon icon={faTimes} size='lg'/></div>
                             <div className='redirectionPage'> 
-                                <a href="#" onClick={() => setIsOpen(false)}><h3>Vous êtes toiletteur ?</h3></a>
+                                <Link to="/register" onClick={() => setIsOpen(false)}><h3>Vous êtes toiletteur ?</h3></Link>
                                 <a href="#" onClick={() => setIsOpen(false)}><h3>Agenda</h3></a>
-                                <a href="#" onClick={() => setIsOpen(false)}><h3>Se connecter</h3></a>
+                                <Link to="/RegisterLogin" onClick={() => setIsOpen(false)}><h3>Se connecter</h3></Link>
                             </div>
                         </div>
                     )}
