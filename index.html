@@ -1,0 +1,56 @@
+<!DOCTYPE html
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BubbleBook - Connexion</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-pink-100 min-h-screen flex flex-col">
+<div class="relative size-50 bg-cover bg-center w-full" style="background-image: url('image.png')">
+    <div class="absolute top-4 left-4 flex items-center">
+        <img class="h-8 w-8 mr-8" srcset="logo.png" alt="Logo">
+        <div class="rounded-full text-black p-2">
+            <span class="font-bold">BubbleBook</span>
+        </div>
+    </div>
+    <div class="absolute top-4 right-4 flex space-x-4">
+        <button class="bg-pink-500 text-white rounded-full px-4 py-2 text-sm">
+            Se connecter
+        </button>
+        <button class="bg-pink-500 text-white rounded-full px-4 py-2 text-sm">
+            Gérer mes RDV
+        </button>
+    </div>
+    <div class="flex-grow flex items-center justify-center p-4 space-x-2 bg-pink-200 rounded-full w-min flex m-auto justify-center items-center mt-20">
+        <div class="flex items-center space-x-3 p-4 w-[50px]">
+            <h3 class="text-xl font-bold text-gray-900"> Département </h3>
+            <button class="bg-pink-50 border-pink-300 rounded-full px-2 py-2 hover:bg-opacity-90 transition-colors">
+                <i class="fa-regular fa-circle-down" style="color: #f10099"></i>
+            </button>
+        </div>
+
+        <div class="flex items-center space-x-3 p-4 w-[50px]">
+            <h3 class="text-xl font-bold text-gray-900"> Ville</h3>
+            <button class="bg-pink-50 border-pink-300 rounded-full px-2 py-2 hover:bg-opacity-90 transition-colors">
+                <i class="fa-regular fa-circle-down" style="color: #f10099"></i>
+            </button>
+        </div>
+
+        <div class="flex items-center space-x-3 p-4 w-[50px]">
+            <h3 class="text-xl font-bold text-gray-900"> Animale</h3>
+            <button class="bg-pink-50 border-pink-300 rounded-full px-2 py-2 hover:bg-opacity-90 transition-colors">
+                <i class="fa-regular fa-circle-down" style="color: #f10099"></i>
+            </button>
+        </div>
+
+        <div class="flex items-center space-x-3 p-4 w-[50px]">
+            <h3 class="text-xl font-bold text-gray-900"> Lane</h3>
+            <button class="bg-pink-50 border-pink-300 rounded-full px-2 py-2 hover:bg-opacity-90 transition-colors">
+                <i class="fa-regular fa-circle-down" style="color: #f10099"></i>
+            </button>
+        </div>
+    </div>
+</body>
+</html>
