@@ -14,11 +14,11 @@
 </head>
 <body class="bg-gray-100">
 
-<header class="relative w-full h-[250px] bg-no-repeat bg-cover bg-center" style="background-image: url('image.png');">
+<header class="relative w-full h-[250px] bg-no-repeat bg-cover bg-center" style="background-image: url('Header/image.png');">
     <div class="mx-auto flex justify-between items-center p-10">
         <!-- Logo -->
         <div class="flex items-center space-x-2">
-            <img src="logo.png" alt="Logo" class="h-10">
+            <img src="Header/logo.png" alt="Logo" class="h-10">
             <a href=""><h2 class="text-white text-xl font-bold">BubbleBook</h2></a>
         </div>
 
