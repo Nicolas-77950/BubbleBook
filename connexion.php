@@ -15,4 +15,7 @@
     </div>
   </div>
 </body>
-</html>
+
+<?php 
+  require_once "Footer/footer.php";
+?>

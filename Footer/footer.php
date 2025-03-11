@@ -1,7 +1,3 @@
-<?php
-require_once "../Header/header.php";
-?>
-
 <footer class="bg-pink-600 text-white py-8">
     <div class="container mx-auto text-center">
         <p class="text-sm mb-4">&copy; 2025 BubbleBook. Tous droits réservés.</p>
