@@ -12,7 +12,7 @@ class User {
             // Verification if the email is already existing
             $stmt = $this->db->prepare("SELECT 1 FROM User WHERE email = :email");
             $stmt->execute(['email' => $email]);
-            if ($stmt->rowCount() > 0) {
+            if ($stmt->fetchColumn()) {
                 return [400, 'Email déjà pris.'];
             }
 

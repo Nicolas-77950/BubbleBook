@@ -1,7 +1,7 @@
 <?php
 require_once 'ClassUser.php';
 require_once 'database.php';
-require_once 'Validator.php';
+require_once 'validator.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
