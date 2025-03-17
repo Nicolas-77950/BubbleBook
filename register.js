@@ -1,6 +1,9 @@
 document.querySelector('form').addEventListener('submit', async function (event) {
     event.preventDefault();
 
+    document.getElementById('error-message').classList.add('hidden');
+    document.getElementById('success-message').classList.add('hidden');
+
     const formData = new FormData(this);
 
     try {
@@ -12,14 +15,30 @@ document.querySelector('form').addEventListener('submit', async function (event)
         const result = await response.json();
 
         if (result.status === 200) {
-            alert(result.message);
+
+            const successMessage = document.getElementById('success-message');
+            successMessage.textContent = result.message;
+            successMessage.classList.remove('hidden');
+
             document.getElementById('inscriptionForm').reset();
-            window.location.href = 'connexion.php'; //redirection on the connexion page
+
+            setTimeout(() => {
+                window.location.href = 'connexion.php';
+            }, 2000); //redirection on the connexion page
         } else {
-            alert(result.message); 
+            const errorMessage = document.getElementById('error-message');
+
+            if (Array.isArray(result.message)) {
+                errorMessage.innerHTML = result.message.join('<br>'); // display many error
+            } else {
+                errorMessage.textContent = result.message; // display one error
+            }
+            errorMessage.classList.remove('hidden');
         }
     } catch (error) {
         console.error('Erreur :', error);
-        alert('Une erreur est survenue.');
+        const errorMessage = document.getElementById('error-message');
+        errorMessage.textContent = 'Une erreur est survenue.';
+        errorMessage.classList.remove('hidden');
     }
 });
