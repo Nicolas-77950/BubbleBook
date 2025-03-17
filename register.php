@@ -5,6 +5,11 @@
   <main class="bg-pink-100 flex-grow flex justify-center items-center p-16">
     <form method="POST" id="inscriptionForm" class="bg-white p-8 rounded-lg shadow-md w-96 space-y-4">
       <h1 class="text-3xl font-bold text-center text-gray-900">Inscription</h1>
+
+      <div id="error-message" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4"></div>
+
+      <div id="success-message" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4"></div>
+
       <div>
         <label class="flex items-center">
           <input type="checkbox" class="form-checkbox text-pink-500 h-4 w-4" name="is_groomer">
