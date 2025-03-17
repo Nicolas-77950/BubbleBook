@@ -1,6 +1,7 @@
 <?php
 require_once 'ClassUser.php';
 require_once 'database.php';
+require_once 'Validator.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -18,6 +19,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = "Tous les champs sont obligatoires.";
     }
 
+    if (!Validator::validateEmail($email)) {
+        $errors[] = "Veuillez entrer une adresse email valide.";
+    }
+
+    $passwordErrors = Validator::getPasswordErrors($password);
+    if (!empty($passwordErrors)) {
+        $errors = array_merge($errors, $passwordErrors);
+    }
     // Verification that the password and confirm password are the same
     if ($password !== $confirm_password) {
         $errors[] = "Les mots de passe ne correspondent pas.";
