@@ -17,13 +17,18 @@ class User {
             }
 
             // hashed password
-            $hached_password = password_hash($password, PASSWORD_DEFAULT, ['cost' => 12]);
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT, ['cost' => 12]);
 
             // insertion of the new user
             $stmt = $this->db->prepare("INSERT INTO User (email, password, name, first_name) VALUES (:email, :password, :name, :first_name)");
 
             // Execution of the request
-            if ($stmt->execute(['password' => $hached_password, 'email' => $email])) {
+            if ($stmt->execute([
+                'email' => $email,
+                'password' => $hashed_password,
+                'name' => $name,
+                'first_name' => $first_name
+            ])) {
                 return [200, 'Inscription réussie.'];
             } else {
                 return [400, "Erreur lors de l'inscription."];
