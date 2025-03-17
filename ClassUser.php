@@ -10,7 +10,7 @@ class User {
     public function registerUser($email, $password, $name, $first_name) {
         try {
             // Verification if the email is already existing
-            $stmt = $this->db->prepare("SELECT 1 FROM Users WHERE email = :email");
+            $stmt = $this->db->prepare("SELECT 1 FROM User WHERE email = :email");
             $stmt->execute(['email' => $email]);
             if ($stmt->rowCount() > 0) {
                 return [400, 'Email déjà pris.'];
