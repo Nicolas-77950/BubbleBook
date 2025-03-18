@@ -19,6 +19,12 @@
 
       <div id="groomer-fields" style="opacity: 0; max-height: 0; overflow: hidden; transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out;">
         <input 
+          name="groomer_name"
+          type="text" 
+          placeholder="Nom du Salon de Toilettage*"
+          class="w-full bg-pink-100 border border-pink-300 rounded-lg px-4 py-2 focus:outline-none focus:border-pink-400 placeholder-black mb-3"
+        >
+        <input 
           name="siret_number"
           type="text" 
           placeholder="Numéro SIRET*" 
