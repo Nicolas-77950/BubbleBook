@@ -48,6 +48,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (empty($siret_number) || empty($address) || empty($city) || empty($department)) {
             $errors[] = "Tous les champs du toiletteur sont obligatoires.";
         }
+
+        $siretErrors = Validator::getSiretErrors($siret_number);
+        if (!empty($siretErrors)) {
+            $errors = array_merge($errors, $siretErrors);
+        }
     }
 
     // Si aucune erreur, procéder à l'inscription
