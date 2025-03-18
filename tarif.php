@@ -19,18 +19,11 @@ try {
     echo "Erreur de connexion : " . $e->getMessage();
     exit;
 }
+
+require_once 'Header/header.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service de Toilettage pour Chiens</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="bg-[#f9e7e7] min-h-screen flex justify-center items-center bg-pink-50">
-    <div class="flex flex-col md:flex-row w-full max-w-4xl m-2 sm:m-4">
+    <div class="flex flex-col md:flex-row w-full max-w-4xl m-2 sm:m-4 p-10">
         <!-- Colonne de gauche : Informations et Disponibilités -->
         <div class="w-full md:w-1/2 p-4 text-center md:text-left">
         <?php
@@ -144,4 +137,7 @@ try {
         </div>
     </div>
 </body>
-</html>
+
+<?php
+    require_once 'Footer/footer.php';
+?>

@@ -43,18 +43,11 @@ try {
     echo "Erreur de connexion : " . $e->getMessage();
     exit;
 }
+
+require_once 'Header/header.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajouter un Service</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="bg-[#f9e7e7] min-h-screen flex justify-center items-center bg-pink-50">
-    <div class="w-full max-w-md m-4 p-6 bg-white rounded-lg shadow-md">
+    <div class="w-full max-w-md m-4 p-6 bg-white rounded-lg shadow-md p-10 m-auto mt-10 mb-10">
         <h1 class="text-2xl font-bold text-center mb-6">Ajouter un nouveau service</h1>
         
         <form method="POST" action="addService.php" class="space-y-4">
@@ -103,4 +96,6 @@ try {
         </form>
     </div>
 </body>
-</html>
+<?php
+    require_once 'Footer/footer.php';
+?>
