@@ -27,4 +27,14 @@ class Validator {
         }
         return $errors;
     }
+
+    public static function getSiretErrors($siret) {
+        if (strlen($siret) != 14) {
+            $errors[] = "Le numéro SIRET doit contenir exactement 14 chiffres";
+        }
+        if (!ctype_digit($siret)) {
+            $errors[] = "Le numéro SIRET ne doit contenir que des chiffres.";
+        }    
+        return $errors;
+    }
 }
