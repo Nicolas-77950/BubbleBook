@@ -1,7 +1,7 @@
 <?php require_once "Header/header.php";?>
 
 <body class="min-h-screen flex flex-col">
-  <!-- Section Principale -->
+
   <main class="bg-pink-100 flex-grow flex justify-center items-center p-16">
     <form method="POST" id="inscriptionForm" class="bg-white p-8 rounded-lg shadow-md w-96 space-y-4">
       <h1 class="text-3xl font-bold text-center text-gray-900">Inscription</h1>
@@ -16,6 +16,7 @@
           <span class="ml-2 text-gray-700">Vous êtes toiletteur ?</span>
         </label>
       </div>
+      
       <input 
         name="email"
         type="email" 
@@ -40,6 +41,7 @@
       <input 
         type="password" 
         name="password"
+        id="password"
         placeholder="Saisissez votre mot de passe*" 
         class="w-full bg-pink-100 border border-pink-300 rounded-lg px-4 py-2 focus:outline-none focus:border-pink-400 placeholder-black"
         required
@@ -57,9 +59,16 @@
       >
         S'inscrire
       </button>
+
+      <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+        <div id="password-strength-bar" class="h-2.5 rounded-full" style="width: 0%;"></div>
+      </div>
+
+      <div id="password-strength-text" class="text-sm mt-1"></div>
     </form>
   </main>
   <script src="register.js"></script>
+  <script src="password.js"></script>
 </body>
 
 <?php require_once "Footer/footer.php"; ?>
