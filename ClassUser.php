@@ -38,4 +38,38 @@ class User {
             return [500, "Erreur de base de données : " . $e->getMessage()];
         }
     }
+
+    public function registerGroomer($email, $siret_number, $address, $city, $department) {
+        try {
+            // Check if the SIRET number already exists and is verified
+            $stmt = $this->db->prepare("SELECT 1 FROM Groomer WHERE siret_number = :siret_number AND is_verified = TRUE");
+            $stmt->execute(['siret_number' => $siret_number]);
+            if ($stmt->fetchColumn()) {
+                return [400, 'Ce toiletteur existe déjà.'];
+            }
+    
+            // Insert the new groomer
+            $stmt = $this->db->prepare("INSERT INTO Groomer (siret_number, address, city, department) VALUES (:siret_number, :address, :city, :department)");
+            $stmt->execute([
+                'siret_number' => $siret_number,
+                'address' => $address,
+                'city' => $city,
+                'department' => $department
+            ]);
+    
+            // Get the groomer ID after insertion
+            $groomer_id = $this->db->lastInsertId();
+    
+            // Update the user with the groomer ID using the email
+            $stmt = $this->db->prepare("UPDATE User SET groomer_id = :groomer_id WHERE email = :email");
+            $stmt->execute([
+                'groomer_id' => $groomer_id,
+                'email' => $email
+            ]);
+    
+            return [200, 'Inscription de toiletteur réussie.'];
+        } catch (PDOException $e) {
+            return [500, "Erreur de base de données : " . $e->getMessage()];
+        }
+    }
 }
