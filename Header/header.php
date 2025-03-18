@@ -58,4 +58,4 @@
 </header>
 
 <!-- Call the JavaScript file for the burger menu -->
-<script src="burgerMenu.js"></script>
+<script src="Header/burgerMenu.js"></script>
