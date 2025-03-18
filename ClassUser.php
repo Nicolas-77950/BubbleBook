@@ -39,7 +39,7 @@ class User {
         }
     }
 
-    public function registerGroomer($email, $siret_number, $address, $city, $department) {
+    public function registerGroomer($email, $siret_number, $address, $city, $department, $groomer_name) {
         try {
             // Check if the SIRET number already exists and is verified
             $stmt = $this->db->prepare("SELECT 1 FROM Groomer WHERE siret_number = :siret_number AND is_verified = TRUE");
@@ -49,8 +49,9 @@ class User {
             }
     
             // Insert the new groomer
-            $stmt = $this->db->prepare("INSERT INTO Groomer (siret_number, address, city, department) VALUES (:siret_number, :address, :city, :department)");
+            $stmt = $this->db->prepare("INSERT INTO Groomer (groomer_name, siret_number, address, city, department) VALUES (:groomer_name, :siret_number, :address, :city, :department)");
             $stmt->execute([
+                'groomer_name' => $groomer_name,
                 'siret_number' => $siret_number,
                 'address' => $address,
                 'city' => $city,
