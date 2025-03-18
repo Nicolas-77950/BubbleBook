@@ -1,13 +1,11 @@
-<?php require_once "Header/header.php";?>
+<?php require_once "Header/header.php"; ?>
 
 <body class="min-h-screen flex flex-col">
-
   <main class="bg-pink-100 flex-grow flex justify-center items-center p-16">
     <form method="POST" id="inscriptionForm" class="bg-white p-8 rounded-lg shadow-md w-96 space-y-4">
       <h1 class="text-3xl font-bold text-center text-gray-900">Inscription</h1>
 
       <div id="error-message" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4"></div>
-
       <div id="success-message" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4"></div>
 
       <div>
@@ -36,18 +34,16 @@
           placeholder="Adresse*" 
           class="w-full bg-pink-100 border border-pink-300 rounded-lg px-4 py-2 focus:outline-none focus:border-pink-400 placeholder-black mb-3"
         >
-        <input 
-          name="city"
-          type="text" 
-          placeholder="Ville*" 
-          class="w-full bg-pink-100 border border-pink-300 rounded-lg px-4 py-2 focus:outline-none focus:border-pink-400 placeholder-black mb-3"
-        >
-        <input 
-          name="department"
-          type="text" 
-          placeholder="Département*" 
-          class="w-full bg-pink-100 border border-pink-300 rounded-lg px-4 py-2 focus:outline-none focus:border-pink-400 placeholder-black mb-3"
-        >
+
+        <label for="department">Département :</label>
+        <select name="department" id="department" class="w-full bg-pink-100 border border-pink-300 rounded-lg px-4 py-2 focus:outline-none focus:border-pink-400 placeholder-black mb-3" required>
+            <option value="">Sélectionnez un département</option>
+        </select>
+
+        <label for="city">Ville :</label>
+        <select name="city" id="city" class="w-full bg-pink-100 border border-pink-300 rounded-lg px-4 py-2 focus:outline-none focus:border-pink-400 placeholder-black mb-3" required disabled>
+            <option value="">Sélectionnez d'abord un département</option>
+        </select>
       </div>
 
       <input 
@@ -100,9 +96,12 @@
       <div id="password-strength-text" class="text-sm mt-1"></div>
     </form>
   </main>
+
+  <!-- Scripts JavaScript -->
   <script src="register.js"></script>
   <script src="password.js"></script>
   <script src="groomer.js"></script>
+  <script src="geoApi.js"></script>
 </body>
 
 <?php require_once "Footer/footer.php"; ?>
