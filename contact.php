@@ -19,12 +19,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $error = "Adresse e-mail invalide.";
     } else {
         // Initialiser le client Resend
-        $resend = new Client($_ENV['RESEND_API_KEY']); // <-- Ligne ajoutée ici !
+        $resend = new Client($_ENV['RESEND_API_KEY']);
 
         try {
             $response = $resend->emails->send([
                 'from' => 'onboarding@resend.dev',
-                'to' => ['kkprout2006@gmail.com'], // Ton adresse e-mail
+                'to' => ['kkprout2006@gmail.com'], 
                 'subject' => 'Nouveau message depuis le formulaire de contact',
                 'html' => "<p><strong>Nom :</strong> $name</p><p><strong>E-mail :</strong> $email</p><p><strong>Message :</strong> $message</p>"
             ]);
@@ -71,4 +71,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
     </div>
 </body>
-</html>
+</html> 
