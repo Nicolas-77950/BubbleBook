@@ -35,14 +35,12 @@
           class="w-full bg-pink-100 border border-pink-300 rounded-lg px-4 py-2 focus:outline-none focus:border-pink-400 placeholder-black mb-3"
         >
 
-        <label for="department">Département :</label>
-        <select name="department" id="department" class="w-full bg-pink-100 border border-pink-300 rounded-lg px-4 py-2 focus:outline-none focus:border-pink-400 placeholder-black mb-3" required>
-            <option value="">Sélectionnez un département</option>
+        <select name="department" id="department" class="w-full bg-pink-100 border border-pink-300 rounded-lg px-4 py-2 focus:outline-none focus:border-pink-400 placeholder-black mb-3">
+            <option value="">Sélectionnez un département*</option>
         </select>
 
-        <label for="city">Ville :</label>
-        <select name="city" id="city" class="w-full bg-pink-100 border border-pink-300 rounded-lg px-4 py-2 focus:outline-none focus:border-pink-400 placeholder-black mb-3" required disabled>
-            <option value="">Sélectionnez d'abord un département</option>
+        <select name="city" id="city" class="w-full bg-pink-100 border border-pink-300 rounded-lg px-4 py-2 focus:outline-none focus:border-pink-400 placeholder-black mb-3" disabled>
+            <option value="">Sélectionnez d'abord un département*</option>
         </select>
       </div>
 
@@ -98,10 +96,10 @@
   </main>
 
   <!-- Scripts JavaScript -->
-  <script src="register.js"></script>
-  <script src="password.js"></script>
-  <script src="groomer.js"></script>
-  <script src="geoApi.js"></script>
+  <script src="Register/register.js"></script>
+  <script src="Register/password.js"></script>
+  <script src="Register/groomer.js"></script>
+  <script src="Register/geoApi.js"></script>
 </body>
 
 <?php require_once "Footer/footer.php"; ?>

@@ -7,7 +7,7 @@ document.querySelector('form').addEventListener('submit', async function (event)
     const formData = new FormData(this);
 
     try {
-        const response = await fetch('registerAjax.php', {
+        const response = await fetch('Register/registerAjax.php', {
             method: 'POST',
             body: formData
         });
