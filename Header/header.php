@@ -13,7 +13,7 @@
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-gray-100">
+<body class="bg-pink-0">
 
 <header class="relative w-full h-[250px] bg-no-repeat bg-cover bg-center" style="background-image: url('Header/image.png');">
     <div class="mx-auto flex justify-between items-center p-10">
@@ -58,4 +58,4 @@
 </header>
 
 <!-- Call the JavaScript file for the burger menu -->
-<script src="burgerMenu.js"></script>
+<script src="Header/burgerMenu.js"></script>
