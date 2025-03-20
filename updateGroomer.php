@@ -1,12 +1,8 @@
 <?php
-// Connexion à la base de données
-$host = 'bubblebook-project-db-1';
-$dbname = 'bubble';
-$username = 'root';
-$password = 'mariadb';
+require_once 'database.php';
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $pdo = Database::getConnection();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Vérification si groomer_id est fourni
