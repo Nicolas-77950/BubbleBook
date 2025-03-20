@@ -1,0 +1,74 @@
+<?php
+
+$conn = new mysqli(
+    "localhost", 
+    "root", 
+    "", 
+    "bubble");
+
+if ($conn->connect_error) {
+    die("Connexion échouée : " . $conn->connect_error);
+}
+
+$mot_cle = isset($_GET['mot_cle']) ? $_GET['mot_cle'] : '';
+$ville = isset($_GET['ville']) ? $_GET['ville'] : '';
+
+
+$sql = "SELECT * FROM Groomer WHERE 1"; 
+
+if (!empty($mot_cle)) {
+    $sql .= " AND (address LIKE '%$mot_cle%' OR city LIKE '%$mot_cle%' OR department LIKE '%$mot_cle%')";
+}
+
+if (!empty($ville)) {
+    $sql .= " AND city LIKE '%$ville%'";
+}
+
+$result = $conn->query($sql);
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Rechercher un toiletteur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-md mx-auto bg-white rounded-lg shadow-md p-6">
+        <h1 class="text-2xl font-bold mb-6 text-center">Rechercher un toiletteur</h1>
+        <form method="GET" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="space-y-4">
+            <div>
+                <label for="mot_cle" class="block text-sm font-medium text-gray-700">Mot clé (adresse, ville, département)...</label>
+                <input type="text" name="mot_cle" id="mot_cle" placeholder="Mot clé..." value="<?php echo htmlspecialchars($mot_cle); ?>" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+            </div>
+            <div>
+                <label for="ville" class="block text-sm font-medium text-gray-700">Ville</label>
+                <input type="text" name="ville" id="ville" placeholder="Ville..." value="<?php echo htmlspecialchars($ville); ?>" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+            </div>
+            <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-300 ease-in-out transform hover:-translate-y-1">Rechercher</button>
+        </form>
+
+        <?php
+       
+        if ($result->num_rows > 0) {
+            echo '<div class="mt-8">';
+            while ($row = $result->fetch_assoc()) {
+                echo '<a href="tarif.php?groomer_id=' . $row['groomer_id'] . '" class="block bg-white rounded-lg shadow-md p-6 mb-4 hover:bg-gray-100 transition duration-300">';
+                echo '<h2 class="text-xl font-semibold mb-2">Toiletteur #' . $row['groomer_id'] . '</h2>';
+                echo '<p><strong>SIREN:</strong> ' . $row['siren_number'] . '</p>';
+                echo '<p><strong>Adresse:</strong> ' . $row['address'] . '</p>';
+                echo '<p><strong>Ville:</strong> ' . $row['city'] . '</p>';
+                echo '<p><strong>Département:</strong> ' . $row['department'] . '</p>';
+                echo '</a>';
+            }
+            echo '</div>';
+        } else {
+            echo '<p class="text-center mt-8">Aucun résultat trouvé.</p>';
+        }
+
+        $conn->close();
+        ?>
+    </div>
+</body>
+</html>
