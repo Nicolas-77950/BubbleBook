@@ -5,6 +5,11 @@ require_once '../ClassUser.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+    if (empty($_POST['email']) || empty($_POST['password'])) {
+        echo json_encode(['status' => 400, 'message' => 'Email et mot de passe requis']);
+        exit;
+    }
+
     $email = $_POST['email'];
     $password = $_POST['password'];
 
@@ -17,8 +22,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // creation of the session
         $_SESSION['email'] = $user ['email']?? '';
         $_SESSION['groomer_id'] = $user ['groomer_id']?? '';
+
+        echo json_encode(['status' => 200, 'message' => $res[1]]);
+    } else {
+        echo json_encode(['status' => $res[0], 'message' => $res[1]]);
     }
-    echo json_encode(['succes' => $res[0],'message'=> $res[1]]);
+    
     exit;
 }
 
