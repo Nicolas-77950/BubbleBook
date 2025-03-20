@@ -1,12 +1,9 @@
 <?php
-// Connexion à la base de données
-$host = 'bubblebook-project-db-1';
-$dbname = 'bubble';
-$username = 'root'; // À modifier selon votre configuration
-$password = 'mariadb'; // À modifier selon votre configuration
+require_once 'database.php';
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $pdo = Database::getConnection();
+
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     // Récupération des services depuis la table Service
