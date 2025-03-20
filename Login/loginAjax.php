@@ -17,10 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // creation of the session
         $_SESSION['email'] = $user ['email']?? '';
         $_SESSION['groomer_id'] = $user ['groomer_id']?? '';
-        echo json_encode(['succes' => $res[0],'message'=> $res[1]]);
-    }else {
-        echo json_encode(['succes' => $res[0],'message'=> $res[1]]);
     }
+    echo json_encode(['succes' => $res[0],'message'=> $res[1]]);
     exit;
 }
 

@@ -92,7 +92,7 @@ class User {
                 $stmt->execute(['email' => $email]);
                 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-                return [200, "Connexion réussie ! Redirection à la page d'accueil en cours ..."];
+                return [200, "Connexion réussie ! Redirection à la page d'accueil en cours ...", $user];
             } else {
                 return [400, "Mot de passe ou Adresse Mail invalide"];
             }
