@@ -1,5 +1,8 @@
 document.querySelector('form').addEventListener('submit', async function (event) {
     event.preventDefault();
+
+    document.getElementById('error-message').classList.add('hidden');
+    document.getElementById('success-message').classList.add('hidden');
     
     const formData = new FormData(this);
 
@@ -12,12 +15,29 @@ document.querySelector('form').addEventListener('submit', async function (event)
         const result = await response.json();
 
         if (result.status === 200) {
-            console.log("ça fonctionne");
-            alert("ça fonctionne");
+            const successMessage = document.getElementById('success-message');
+            successMessage.textContent = result.message;
+            successMessage.classList.remove('hidden');
+
+            document.getElementById('LoginForm').reset();
+
+            setTimeout(() => {
+                //window.location.href = 'index.php';
+            }, 2000);
         } else {
-            console.log("ça fonctionne pas :(")
+            const errorMessage = document.getElementById('error-message');
+
+            if (Array.isArray(result.message)) {
+                errorMessage.innerHTML = result.message.join('<br>'); // display many error
+            } else {
+                errorMessage.textContent = result.message; // display one error
+            }
+            errorMessage.classList.remove('hidden');
         }
     } catch (error) {
-        console.error("Erreur lors de la requête POST :", error);
+        console.error('Erreur :', error);
+        const errorMessage = document.getElementById('error-message');
+        errorMessage.textContent = 'Une erreur est survenue.';
+        errorMessage.classList.remove('hidden');
     }
 })
