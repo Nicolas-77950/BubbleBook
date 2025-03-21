@@ -16,6 +16,11 @@
             transition: background-color 0.3s ease;
         }
         
+        /* Transition for navigation buttons */
+        .nav-buttons {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        
         :root {
             --primary: #ec4899;
             --primary-dark: #db2777;
@@ -38,7 +43,7 @@
         </div>
 
         <!-- Buttons (visible on large screens) -->
-        <div class="hidden md:flex items-center space-x-4 gap-x-4">
+        <div id="nav-buttons" class="hidden md:flex items-center space-x-4 gap-x-4 nav-buttons">
             <a href="inscription.php" class="bg-pink-600 text-white px-4 py-2 rounded-full text-sm shadow-md hover:bg-pink-600 transition-colors">
                 <h2>Vous êtes toiletteur ?</h2>
             </a>
@@ -82,14 +87,30 @@
 <script>
 window.addEventListener('scroll', function() {
     const header = document.getElementById('main-header');
+    const navButtons = document.getElementById('nav-buttons');
+    
     if (window.scrollY > 50) {
         // Quand on scrolle, ajouter un fond au header
         header.classList.add('bg-pink-500');
         header.classList.add('shadow-md');
+        
+        // Faire disparaître les boutons de navigation
+        navButtons.style.opacity = '0';
+        navButtons.style.transform = 'translateY(-20px)';
+        setTimeout(() => {
+            navButtons.style.display = 'none';
+        }, 300); // Attendre la fin de la transition avant de cacher complètement
     } else {
         // Quand on est en haut, rendre le header transparent
         header.classList.remove('bg-pink-500');
         header.classList.remove('shadow-md');
+        
+        // Faire réapparaître les boutons de navigation
+        navButtons.style.display = 'flex';
+        setTimeout(() => {
+            navButtons.style.opacity = '1';
+            navButtons.style.transform = 'translateY(0)';
+        }, 10); // Petit délai pour s'assurer que display:flex est appliqué avant l'animation
     }
 });
 </script>
