@@ -15,23 +15,25 @@ document.querySelector('form').addEventListener('submit', async function (event)
         const result = await response.json();
 
         if (result.status === 200) {
-
             const successMessage = document.getElementById('success-message');
             successMessage.textContent = result.message;
             successMessage.classList.remove('hidden');
 
             document.getElementById('inscriptionForm').reset();
 
-            setTimeout(() => {
-                window.location.href = 'connexion.php';
-            }, 2000); //redirection on the connexion page
+            // if their is a reddirection, that mean we are connected ans we redirect on the login page
+            if (result.redirect) {
+                setTimeout(() => {
+                    window.location.href = result.redirect;
+                }, 2000);
+            }
         } else {
             const errorMessage = document.getElementById('error-message');
 
             if (Array.isArray(result.message)) {
-                errorMessage.innerHTML = result.message.join('<br>'); // display many error
+                errorMessage.innerHTML = result.message.join('<br>'); // Afficher plusieurs erreurs
             } else {
-                errorMessage.textContent = result.message; // display one error
+                errorMessage.textContent = result.message; // Afficher une seule erreur
             }
             errorMessage.classList.remove('hidden');
         }
