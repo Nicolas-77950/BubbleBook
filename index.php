@@ -16,7 +16,6 @@
         Prenez rendez-vous en quelques clics avec les meilleurs professionnels près de chez vous
       </p>
       
-      <!-- Bouton CTA principal -->
       <a href="inscription.php" class="bg-pink-500 hover:bg-pink-600 text-white font-medium px-8 py-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 mb-12">
         Trouver un toiletteur maintenant
       </a>
@@ -178,7 +177,7 @@
     </div>
   </section>
 
-    <!-- Section Articles avec design moderne -->
+    <!-- Section Articles -->
     <section class="py-20 bg-pink-50">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">Actualités et conseils</h2>
@@ -236,7 +235,7 @@
     </div>
   </section>
 
-  <!-- Section CTA avec design attrayant -->
+  <!-- Section CTA -->
   <section class="py-20 bg-gradient-to-r from-pink-500 to-pink-600 text-white">
     <div class="container mx-auto px-4 text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-6">Prêt à trouver le toiletteur idéal pour votre animal ?</h2>
@@ -252,7 +251,7 @@
     </div>
   </section>
 
-  <!-- Section Toiletteurs avec design moderne -->
+  <!-- Section Toiletteurs-->
   <section class="py-20 bg-white">
     <div class="container mx-auto px-4">
       <div class="max-w-3xl mx-auto text-center">
@@ -262,8 +261,8 @@
           Rejoignez notre plateforme et développez votre clientèle. BubbleBook vous aide à gérer vos rendez-vous, à vous faire connaître et à fidéliser vos clients.
         </p>
         <div class="flex justify-center">
-          <a href="#" class="bg-pink-500 text-white px-10 py-4 rounded-full font-medium hover:bg-pink-600 transition-all duration-300 transform hover:scale-105 shadow-md text-lg">
-            Devenir partenaire
+          <a href="inscription.php" class="bg-pink-500 text-white px-10 py-4 rounded-full font-medium hover:bg-pink-600 transition-all duration-300 transform hover:scale-105 shadow-md text-lg">
+            Créez votre compte 
           </a>
         </div>
       </div>

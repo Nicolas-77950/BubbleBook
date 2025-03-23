@@ -138,32 +138,27 @@ document.getElementById('close-menu').addEventListener('click', function() {
 });
 </script>
 
-<!-- Script pour le header qui suit le scroll -->
 <script>
 window.addEventListener('scroll', function() {
     const header = document.getElementById('main-header');
     const navButtons = document.getElementById('nav-buttons');
     
     if (window.scrollY > 50) {
-        // Quand on scrolle, ajouter un fond au header
         header.classList.add('bg-pink-500', 'shadow-md', 'py-2', 'scrolled');
         
-        // Faire disparaître les boutons de navigation
         navButtons.style.opacity = '0';
         navButtons.style.transform = 'translateY(-20px)';
         setTimeout(() => {
             navButtons.style.display = 'none';
-        }, 300); // Attendre la fin de la transition avant de cacher complètement
+        }, 300); 
     } else {
-        // Quand on est en haut, rendre le header transparent
         header.classList.remove('bg-pink-500', 'shadow-md', 'py-2', 'scrolled');
         
-        // Faire réapparaître les boutons de navigation
         navButtons.style.display = 'flex';
         setTimeout(() => {
             navButtons.style.opacity = '1';
             navButtons.style.transform = 'translateY(0)';
-        }, 10); // Petit délai pour s'assurer que display:flex est appliqué avant l'animation
+        }, 10); 
     }
 });
 </script>

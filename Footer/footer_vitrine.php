@@ -1,8 +1,6 @@
-<footer class="bg-gradient-to-r from-pink-600 to-pink-700 text-white py-16">
+<footer class="bg-gradient-to-r from-pink-500 to-pink-600 text-white py-16">
     <div class="container mx-auto px-4">
-        <!-- Section principale du footer avec informations de contact et navigation -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-            <!-- Logo et description -->
             <div>
                 <div class="flex items-center space-x-2 mb-4">
                     <img src="Header/logo.png" alt="Logo BubbleBook" class="h-10">
