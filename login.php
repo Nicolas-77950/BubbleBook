@@ -3,7 +3,7 @@
 ?>
 
 <body class="bg-pink-100 min-h-screen flex flex-col">
-  <!-- Contenu principal avec bloc de connexion centré -->
+
   <div class="flex-grow flex justify-center items-center p-36 bg-pink-100">
     <div class="bg-white rounded-lg shadow-md p-8 w-96">
       <h1 class="text-3xl font-bold text-center text-gray-900">Connexion</h1>
