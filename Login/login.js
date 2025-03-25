@@ -1,6 +1,7 @@
 document.querySelector('form').addEventListener('submit', async function (event) {
-    event.preventDefault();
 
+    event.preventDefault();
+    
     document.getElementById('error-message').classList.add('hidden');
     document.getElementById('success-message').classList.add('hidden');
     
@@ -22,8 +23,8 @@ document.querySelector('form').addEventListener('submit', async function (event)
             document.getElementById('LoginForm').reset();
 
             setTimeout(() => {
-                //window.location.href = 'index.php';
-            }, 2000);
+                window.location.href = '/index.php';
+            }, 200);
         } else {
             const errorMessage = document.getElementById('error-message');
 
