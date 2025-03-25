@@ -71,7 +71,7 @@
 
         <!-- Buttons (visible on large screens) -->
         <div id="nav-buttons" class="hidden md:flex items-center space-x-6 nav-buttons">
-            <a href="inscription.php" class="bg-pink-600 text-white px-5 py-2 rounded-full text-sm shadow-md hover:bg-pink-700 transition-all duration-300 transform hover:scale-105">
+            <a href="register.php" class="bg-pink-600 text-white px-5 py-2 rounded-full text-sm shadow-md hover:bg-pink-700 transition-all duration-300 transform hover:scale-105">
                 <h2>Vous êtes toiletteur ?</h2>
             </a>
             <div class="flex flex-col items-center text-white text-sm">

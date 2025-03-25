@@ -16,7 +16,7 @@
         Prenez rendez-vous en quelques clics avec les meilleurs professionnels près de chez vous
       </p>
       
-      <a href="inscription.php" class="bg-pink-500 hover:bg-pink-600 text-white font-medium px-8 py-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 mb-12">
+      <a href="register.php" class="bg-pink-500 hover:bg-pink-600 text-white font-medium px-8 py-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 mb-12">
         Trouver un toiletteur maintenant
       </a>
     </div>
@@ -68,7 +68,7 @@
           connectons avec les meilleurs toiletteurs près de chez vous.
         </p>
         <div class="flex justify-center">
-          <a href="inscription.php" class="bg-pink-500 text-white px-8 py-3 rounded-full font-medium hover:bg-pink-600 transition-all duration-300 transform hover:scale-105 shadow-md">
+          <a href="register.php" class="bg-pink-500 text-white px-8 py-3 rounded-full font-medium hover:bg-pink-600 transition-all duration-300 transform hover:scale-105 shadow-md">
             Créer un compte gratuitement
           </a>
         </div>
@@ -241,7 +241,7 @@
       <h2 class="text-3xl md:text-4xl font-bold mb-6">Prêt à trouver le toiletteur idéal pour votre animal ?</h2>
       <p class="text-xl mb-10 max-w-2xl mx-auto">Rejoignez des milliers de propriétaires d'animaux satisfaits et prenez rendez-vous dès aujourd'hui.</p>
       <div class="flex flex-wrap justify-center gap-6">
-        <a href="inscription.php" class="bg-white text-pink-500 px-8 py-3 rounded-full font-medium hover:bg-pink-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
+        <a href="register.php" class="bg-white text-pink-500 px-8 py-3 rounded-full font-medium hover:bg-pink-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
           S'inscrire
         </a>
         <a href="connexion.php" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white hover:text-pink-500 transition-all duration-300 transform hover:scale-105">
@@ -261,7 +261,7 @@
           Rejoignez notre plateforme et développez votre clientèle. BubbleBook vous aide à gérer vos rendez-vous, à vous faire connaître et à fidéliser vos clients.
         </p>
         <div class="flex justify-center">
-          <a href="inscription.php" class="bg-pink-500 text-white px-10 py-4 rounded-full font-medium hover:bg-pink-600 transition-all duration-300 transform hover:scale-105 shadow-md text-lg">
+          <a href="register.php" class="bg-pink-500 text-white px-10 py-4 rounded-full font-medium hover:bg-pink-600 transition-all duration-300 transform hover:scale-105 shadow-md text-lg">
             Créez votre compte 
           </a>
         </div>
