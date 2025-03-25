@@ -22,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // creation of the session
         $_SESSION['email'] = $user ['email']?? '';
         $_SESSION['groomer_id'] = $user ['groomer_id']?? '';
+        $_SESSION['user_id'] = $user ['user_id']?? '';
 
         echo json_encode(['status' => 200, 'message' => $res[1]]);
     } else {

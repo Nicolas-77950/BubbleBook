@@ -1,5 +1,6 @@
 <?php
 require_once 'database.php';
+require_once 'Header/header.php';
 
 try {
     $pdo = Database::getConnection();
@@ -10,7 +11,6 @@ try {
         $service_id = $_POST['service_id'];
         $reservation_date = $_POST['reservation_date'];
         $reservation_time = $_POST['reservation_time'];
-        $user_id = 1; // À remplacer par l'ID de l'utilisateur connecté
 
         $reservation_datetime = $reservation_date . ' ' . $reservation_time;
 
@@ -38,7 +38,7 @@ try {
     exit;
 }
 
-require_once 'Header/header.php';
+
 ?>
 
 <div class="flex flex-col md:flex-row w-full max-w-4xl m-2 sm:m-4 p-10">
@@ -52,7 +52,7 @@ require_once 'Header/header.php';
                 Groomer.address, 
                 Groomer.city, 
                 Groomer.department,
-                Groomer.siren_number AS siren_number,
+                Groomer.siret_number AS siret_number,
                 Groomer.address AS groomer_address,
                 Groomer.city AS groomer_city,
                 Groomer.department AS groomer_department
