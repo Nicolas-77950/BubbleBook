@@ -1,6 +1,11 @@
 <?php
 require_once 'database.php';
 
+if(isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id'];
+} else {
+    header("location: login.php");
+}
 try {
     $pdo = Database::getConnection();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -10,7 +15,6 @@ try {
         $service_id = $_POST['service_id'];
         $reservation_date = $_POST['reservation_date'];
         $reservation_time = $_POST['reservation_time'];
-        $user_id = 1; // À remplacer par l'ID de l'utilisateur connecté
 
         $reservation_datetime = $reservation_date . ' ' . $reservation_time;
 

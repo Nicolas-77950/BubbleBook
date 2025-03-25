@@ -1,15 +1,16 @@
 <?php
 require_once 'database.php';
 
+    if(isset($_SESSION['groomer_id'])) {
+        $groomer_id = $_SESSION['groomer_id'];
+    } else {
+        header("location: login.php");
+    }
+
 try {
     $pdo = Database::getConnection();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Vérification si groomer_id est fourni
-    if (!isset($_GET['groomer_id'])) {
-        die("Aucun groomer_id spécifié.");
-    }
-    $groomer_id = $_GET['groomer_id'];
 
     // Traitement du formulaire si soumis
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
