@@ -1,9 +1,9 @@
 <?php
 class Database {
-    private $host = 'bubblebook-project-db-1';
+    private $host = 'localhost';
     private $db_name = 'bubble';
     private $username = 'root';
-    private $password = 'mariadb';
+    private $password = '';
     private static $instance = null;
     private $conn;
 
