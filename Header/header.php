@@ -1,3 +1,13 @@
+<?php 
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+$isLoggin = empty($_SESSION);
+$isGroomer = isset($_SESSION['groomer_id']);
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -20,18 +30,39 @@
         <!-- Logo -->
         <div class="flex items-center space-x-2">
             <img src="Header/logo.png" alt="Logo" class="h-10">
-            <a href=""><h2 class="text-white text-xl font-bold">BubbleBook</h2></a>
+            <a href="/index.php"><h2 class="text-white text-xl font-bold">BubbleBook</h2></a>
         </div>
 
-        <!-- Buttons (visible on large screens) -->
+        <!-- Buttons -->
         <div class="hidden md:flex items-center space-x-4 gap-x-4">
-            <button class="bg-pink-600 text-white px-4 py-2 rounded-full text-sm shadow-md hover:bg-pink-700">
-                <h2>Vous êtes toiletteur ?</h2>
-            </button>
-            <div class="flex flex-col items-center text-white text-sm">
-                <span><h2>Se connecter</h2></span>
-                <a href="#" class="text-pink-600 hover:underline"><h2>Gérer mes RDV</h2></a>
-            </div>
+            <?php if ($isLoggin) : ?>
+                <button class="bg-pink-600 text-white px-4 py-2 rounded-full text-sm shadow-md hover:bg-pink-700">
+                    <a href="/register.php"><h2>Vous êtes toiletteur ?</h2></a>
+                </button>
+                <div class="flex flex-col items-center text-white text-sm">
+                    <a href="/login.php"><h2>Se connecter</h2></a>
+                    <a href="/register.php" class="text-pink-600 hover:underline"><h2>S'inscrire</h2></a>
+                </div>
+            <?php elseif (!$isLoggin && $isGroomer) : ?>
+                <div class="flex flex-row items-center text-sm py-2 gap-x-4">
+                    <button class="bg-pink-600 text-white px-4 py-2 rounded-full text-sm shadow-md hover:bg-pink-700">
+                        <a href="/profil.php"><h2>Profil</h2></a>
+                    </button>
+                    <button class="bg-white text-pink-600 px-4 py-2 rounded-full text-sm shadow-md hover:bg-pink-100">
+                        <a href="historique.php"><h2>Agenda</h2></a>
+                    </button>
+                </div>
+            <?php elseif (!$isLoggin && !$isGroomer) : ?>
+                <div class="flex flex-row items-center text-sm py-2 gap-x-4">
+                    <button class="bg-pink-600 text-white px-4 py-2 rounded-full text-sm shadow-md hover:bg-pink-700">
+                        <a href="/profil.php"><h2>Profil</h2></a>
+                    </button>
+                    <button class="bg-white text-pink-600 px-4 py-2 rounded-full text-sm shadow-md hover:bg-pink-100">
+                        <a href="historique.php"><h2>Gérer mes RDV</h2></a>
+                    </button>
+                </div>
+            
+            <?php endif; ?>
         </div>
 
         <!-- Burger menu button (visible on small screens) -->
@@ -46,13 +77,33 @@
     <!-- Mobile menu (hidden by default) -->
     <div id="mobile-menu" class="md:hidden absolute top-0 left-0 w-full bg-gray-800 transform -translate-y-full transition-transform duration-300 ease-in-out">
         <div class="flex flex-col items-center p-4 space-y-4">
-            <button class="bg-pink-600 text-white px-4 py-2 rounded-full text-sm shadow-md hover:bg-pink-700 w-full">
-                <h2>Vous êtes toiletteur ?</h2>
-            </button>
-            <div class="flex flex-col items-center text-white text-sm">
-                <span><h2>Se connecter</h2></span>
-                <a href="#" class="text-pink-600 hover:underline"><h2>Gérer mes RDV</h2></a>
-            </div>
+            <?php if ($isLoggin) : ?>
+                <button class="bg-pink-600 text-white px-4 py-2 rounded-full text-sm shadow-md hover:bg-pink-700">
+                    <a href="/register.php"><h2>Vous êtes toiletteur ?</h2></a>
+                </button>
+                <div class="flex flex-col items-center text-white text-sm">
+                    <a href="/login.php"><h2>Se connecter</h2></a>
+                    <a href="/register.php" class="text-pink-600 hover:underline"><h2>S'inscrire</h2></a>
+                </div>
+            <?php elseif (!$isLoggin && $isGroomer) : ?>
+                <div class="flex items-center text-sm py-2 gap-x-4">
+                    <button class="bg-pink-600 text-white px-4 rounded-full text-sm shadow-md hover:bg-pink-700">
+                        <a href="/profil.php"><h2>Profil</h2></a>
+                    </button>
+                    <button class="bg-white text-pink-600 px-4 rounded-full text-sm shadow-md hover:bg-pink-100">
+                        <a href="historique.php"><h2>Agenda</h2></a>
+                    </button>
+                </div>
+            <?php elseif (!$isLoggin && !$isGroomer) : ?>
+                <div class="flex items-center text-sm py-2 gap-x-4">
+                    <button class="bg-pink-600 text-white px-4 py-2 rounded-full text-sm shadow-md hover:bg-pink-700">
+                        <a href="/profil.php"><h2>Profil</h2></a>
+                    </button>
+                    <button class="bg-white text-pink-600 px-4 py-2 rounded-full text-sm shadow-md hover:bg-pink-100">
+                        <a href="historique.php"><h2>Gérer mes RDV</h2></a>
+                    </button>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </header>

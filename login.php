@@ -1,5 +1,9 @@
 <?php 
   require_once "Header/header.php";
+
+  if (session_status() === PHP_SESSION_NONE) {session_start();}
+
+  //if (!empty($_SESSION)) {header("Location: /index.php");}
 ?>
 
 <body class="bg-pink-100 min-h-screen flex flex-col">
