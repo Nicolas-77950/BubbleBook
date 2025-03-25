@@ -60,11 +60,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $user = new User($pdo);
 
             // Register of the user
-            [$statusCode, $message] = $user->registerUser($email, $password, $name, $first_name);
+            $registerResult = $user->registerUser($email, $password, $name, $first_name);
+            $statusCode = $registerResult[0];
+            $message = $registerResult[1];
 
             // if the user is a groomer register the groomer
             if ($statusCode === 200 && $is_groomer == 1) {
-                [$groomerStatusCode, $groomerMessage] = $user->registerGroomer($email, $siret_number, $address, $city, $department, $groomer_name);
+                $groomerResult = $user->registerGroomer($email, $siret_number, $address, $city, $department, $groomer_name);
+                $groomerStatusCode = $groomerResult[0];
+                $groomerMessage = $groomerResult[1];
 
                 if ($groomerStatusCode !== 200) {
                     http_response_code($groomerStatusCode);
@@ -76,7 +80,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // if the login succesed, login and create the session
             if ($statusCode === 200) {
 
-                [$loginStatusCode, $loginMessage, $userData] = $user->login($email, $password);
+                $loginResult = $user->login($email, $password);
+                $loginStatusCode = $loginResult[0];
+                $loginMessage = $loginResult[1];
+                $userData = $loginResult[2];
+
 
                 if ($loginStatusCode === 200) {
                     // stocking the information in the session
