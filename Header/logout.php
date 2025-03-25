@@ -1,15 +1,12 @@
 <?php
-require_once '/ClassUser.php';
-require_once '/database.php';
 
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-$user = new User(Database::getConnection());
+session_start();
+session_destroy();
 
-$user->logout();
-
-header('Location: login.php');
+header('Location: ../login.php');
 exit();
 ?>
