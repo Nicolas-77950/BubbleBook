@@ -3,7 +3,6 @@ require_once '../ClassUser.php';
 require_once '../database.php';
 require_once 'validator.php';
 
-// Démarrer la session
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
