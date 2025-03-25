@@ -25,7 +25,7 @@ document.querySelector('form').addEventListener('submit', async function (event)
             if (result.redirect) {
                 setTimeout(() => {
                     window.location.href = result.redirect;
-                }, 2000);
+                }, 200);
             }
         } else {
             const errorMessage = document.getElementById('error-message');
