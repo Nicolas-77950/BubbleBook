@@ -88,7 +88,7 @@ class User {
 
             if (password_verify($password, $p['password'])) {
                 // if the password is the same as the password found with the mail, then it start a session
-                $stmt = $this->db->prepare("SELECT email, groomer_id FROM User WHERE email = :email");
+                $stmt = $this->db->prepare("SELECT email, groomer_id, user_id FROM User WHERE email = :email");
                 $stmt->execute(['email' => $email]);
                 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 

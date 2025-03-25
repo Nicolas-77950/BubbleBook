@@ -1,6 +1,12 @@
 <?php
 require_once 'database.php';
 
+    if(!isset($_SESSION['groomer_id'])) {
+        $groomer_id = $_SESSION['groomer_id'];
+    } else {
+        header("location: login.php");
+    }
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $booking_id = $_POST['booking_id'];
     $action = $_POST['action'];

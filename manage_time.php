@@ -2,16 +2,16 @@
 require_once 'database.php';
 require_once 'Header/header.php';
 
-// Récupération de l'ID du toiletteur via GET pour le moment
-$groomer_id = $_GET['groomer_id'];
-
-// À l'avenir, utiliser la session pour récupérer l'ID du toiletteur
-// if (isset($_SESSION['groomer_id'])) {
-//     $groomer_id = $_SESSION['groomer_id'];
-// } else {
-//     echo "Erreur : Vous devez être connecté en tant que toiletteur.";
-//     exit;
-// }
+session_start();
+if(isset($_SESSION['groomer_id'])) {
+    $groomer_id = $_SESSION['groomer_id'];
+} else {
+    ?>
+    <script>
+        window.location.href = "login.php";
+    </script>
+    <?php
+}
 
 try {
     // Connexion à la base de données
