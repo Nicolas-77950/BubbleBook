@@ -88,8 +88,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 if ($loginStatusCode === 200) {
                     // stocking the information in the session
-                    $_SESSION['user_email'] = $userData['email'];
+                    $_SESSION['email'] = $userData['email'];
                     $_SESSION['groomer_id'] = $userData['groomer_id'];
+                    $_SESSION['user_id'] = $userData['user_id'];
 
                     http_response_code($statusCode);
                     echo json_encode([
