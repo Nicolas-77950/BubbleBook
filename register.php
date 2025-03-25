@@ -4,7 +4,7 @@ require_once "Header/header.php";
 
 if (session_status() === PHP_SESSION_NONE) {session_start();}
 
-if (!empty($_SESSION)) {header("Location: /index.php");}
+if (!empty($_SESSION)) {header("Location: /login.php");}
 
 ?>
 
