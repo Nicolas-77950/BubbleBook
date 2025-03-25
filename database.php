@@ -3,7 +3,7 @@ class Database {
     private $host = 'localhost';
     private $db_name = 'bubble';
     private $username = 'root';
-    private $password = '1234';
+    private $password = '';
     private static $instance = null;
     private $conn;
 
