@@ -12,14 +12,12 @@ $ville = isset($_GET['ville']) ? $_GET['ville'] : '';
 $animal = isset($_GET['animal']) ? $_GET['animal'] : '';
 
 $sql = "SELECT DISTINCT g.* FROM Groomer g 
-        LEFT JOIN User u ON g.groomer_id = u.groomer_id 
-        LEFT JOIN Post p ON u.user_id = p.user_id 
-        LEFT JOIN Breed b ON p.breed_id = b.breed_id 
+        LEFT JOIN Groomer_Species gs ON g.groomer_id = gs.groomer_id 
         WHERE 1=1";
 $params = array();
 
 if (!empty($mot_cle)) {
-    $sql .= " AND (g.groomer_name LIKE :mot_cle OR g.address LIKE :mot_cle OR g.city LIKE :mot_cle OR g.department LIKE :mot_cle)";
+    $sql .= " AND (g.groomer_name LIKE :mot_cle OR g.address LIKE :mot_cle OR g.city LIKE :mot_cle OR g.department LIKE :mot_cle OR gs.species LIKE :mot_cle)";
     $params[':mot_cle'] = "%$mot_cle%";
 }
 
@@ -29,7 +27,7 @@ if (!empty($ville)) {
 }
 
 if (!empty($animal)) {
-    $sql .= " AND b.breed_name LIKE :animal";
+    $sql .= " AND gs.species LIKE :animal";
     $params[':animal'] = "%$animal%";
 }
 
@@ -54,7 +52,7 @@ try {
         <h1 class="text-2xl font-bold mb-6 text-center">Rechercher un toiletteur</h1>
         <form method="GET" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="space-y-4">
             <div>
-                <label for="mot_cle" class="block text-sm font-medium text-gray-700">Mot clé (nom, adresse, ville, département)...</label>
+                <label for="mot_cle" class="block text-sm font-medium text-gray-700">Mot clé (nom, adresse, ville, département, animal)...</label>
                 <input type="text" name="mot_cle" id="mot_cle" placeholder="Mot clé..." value="<?php echo htmlspecialchars($mot_cle); ?>" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
             </div>
             <div>
@@ -62,7 +60,7 @@ try {
                 <input type="text" name="ville" id="ville" placeholder="Ville..." value="<?php echo htmlspecialchars($ville); ?>" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
             </div>
             <div>
-                <label for="animal" class="block text-sm font-medium text-gray-700">type d'animal</label>
+                <label for="animal" class="block text-sm font-medium text-gray-700">Type d'animal</label>
                 <input type="text" name="animal" id="animal" placeholder="Ex: chien, chat" value="<?php echo htmlspecialchars($animal); ?>" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
             </div>
             <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-300 ease-in-out transform hover:-translate-y-1">Rechercher</button>
