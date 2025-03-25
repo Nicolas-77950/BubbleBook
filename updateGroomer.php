@@ -1,5 +1,6 @@
 <?php
 require_once 'database.php';
+session_start();
 
     if(isset($_SESSION['groomer_id'])) {
         $groomer_id = $_SESSION['groomer_id'];
@@ -37,7 +38,7 @@ try {
         // Mise à jour dans la table Groomer
         $stmt = $pdo->prepare("
             UPDATE Groomer 
-            SET address = :address, city = :city, department = :department, siren_number = :siret_number 
+            SET address = :address, city = :city, department = :department, siret_number = :siret_number 
             WHERE groomer_id = :groomer_id
         ");
         $stmt->execute([
@@ -84,7 +85,7 @@ try {
     $stmt = $pdo->prepare("
         SELECT 
             User.name, User.first_name, 
-            Groomer.address, Groomer.city, Groomer.department, Groomer.siren_number
+            Groomer.address, Groomer.city, Groomer.department, Groomer.siret_number
         FROM User 
         INNER JOIN Groomer ON User.groomer_id = Groomer.groomer_id 
         WHERE Groomer.groomer_id = :groomer_id
@@ -141,7 +142,7 @@ require_once 'Header/header.php';
                 </div>
                 <div>
                     <label class="block font-bold">Numéro SIRET</label>
-                    <input type="text" name="siret_number" value="<?php echo htmlspecialchars($groomer['siren_number']); ?>" class="w-full p-2 border rounded" required>
+                    <input type="text" name="siret_number" value="<?php echo htmlspecialchars($groomer['siret_number']); ?>" class="w-full p-2 border rounded" required>
                 </div>
             </div>
         </div>

@@ -2,10 +2,15 @@
 require_once 'database.php';
 require_once 'Header/header.php';
 
+session_start();
 if(isset($_SESSION['groomer_id'])) {
     $groomer_id = $_SESSION['groomer_id'];
 } else {
-    header("location: login.php");
+    ?>
+    <script>
+        window.location.href = "login.php";
+    </script>
+    <?php
 }
 
 try {

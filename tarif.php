@@ -1,11 +1,7 @@
 <?php
 require_once 'database.php';
+require_once 'Header/header.php';
 
-if(isset($_SESSION['user_id'])) {
-    $user_id = $_SESSION['user_id'];
-} else {
-    header("location: login.php");
-}
 try {
     $pdo = Database::getConnection();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -42,7 +38,7 @@ try {
     exit;
 }
 
-require_once 'Header/header.php';
+
 ?>
 
 <div class="flex flex-col md:flex-row w-full max-w-4xl m-2 sm:m-4 p-10">
@@ -56,7 +52,7 @@ require_once 'Header/header.php';
                 Groomer.address, 
                 Groomer.city, 
                 Groomer.department,
-                Groomer.siren_number AS siren_number,
+                Groomer.siret_number AS siret_number,
                 Groomer.address AS groomer_address,
                 Groomer.city AS groomer_city,
                 Groomer.department AS groomer_department
