@@ -52,8 +52,9 @@ $isGroomer = isset($_SESSION['groomer_id']);
                         <a href="historique.php"><h2>Agenda</h2></a>
                     </button>
                     <a href="Header/logout.php">
-                    <button class=" flex flex-row bg-[#CCCCCC] text-[#999999] px-4 py-2 rounded-full text-sm shadow-md hover:bg-[#CCCCCC]">
-                            <i class="fa-solid fa-right-from-bracket"></i><h2>Déconnexion</h2>
+                        <button class="flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm shadow-md hover:bg-gray-300 transition-colors duration-200">
+                            <i class="fa-solid fa-right-from-bracket text-sm"></i>
+                            <span class="font-medium">Déconnexion</span>
                         </button>
                     </a>
                 </div>
@@ -66,8 +67,9 @@ $isGroomer = isset($_SESSION['groomer_id']);
                         <a href="historique.php"><h2>Gérer mes RDV</h2></a>
                     </button>
                     <a href="Header/logout.php">
-                        <button class=" flex flex-row bg-[#CCCCCC] text-[#999999] px-4 py-2 rounded-full text-sm shadow-md hover:bg-[#CCCCCC]">
-                            <i class="fa-solid fa-right-from-bracket"></i><h2>Déconnexion</h2>
+                        <button class="flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm shadow-md hover:bg-gray-300 transition-colors duration-200">
+                            <i class="fa-solid fa-right-from-bracket text-sm"></i>
+                            <span class="font-medium">Déconnexion</span>
                         </button>
                     </a>
                 </div>
@@ -96,22 +98,34 @@ $isGroomer = isset($_SESSION['groomer_id']);
                     <a href="/register.php" class="text-pink-600 hover:underline"><h2>S'inscrire</h2></a>
                 </div>
             <?php elseif (!$isLoggin && $isGroomer) : ?>
-                <div class="flex items-center text-sm py-2 gap-x-4">
+                <div class="flex flex-col items-center text-sm py-2 gap-y-4">
                     <button class="bg-pink-600 text-white px-4 rounded-full text-sm shadow-md hover:bg-pink-700">
                         <a href="/profil.php"><h2>Profil</h2></a>
                     </button>
                     <button class="bg-white text-pink-600 px-4 rounded-full text-sm shadow-md hover:bg-pink-100">
                         <a href="historique.php"><h2>Agenda</h2></a>
                     </button>
+                    <a href="Header/logout.php">
+                        <button class="flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm shadow-md hover:bg-gray-300 transition-colors duration-200">
+                            <i class="fa-solid fa-right-from-bracket text-sm"></i>
+                            <span class="font-medium">Déconnexion</span>
+                        </button>
+                    </a>
                 </div>
             <?php elseif (!$isLoggin && !$isGroomer) : ?>
-                <div class="flex items-center text-sm py-2 gap-x-4">
+                <div class="flex flex-col items-center text-sm py-2 gap-y-4">
                     <button class="bg-pink-600 text-white px-4 py-2 rounded-full text-sm shadow-md hover:bg-pink-700">
                         <a href="/profil.php"><h2>Profil</h2></a>
                     </button>
                     <button class="bg-white text-pink-600 px-4 py-2 rounded-full text-sm shadow-md hover:bg-pink-100">
                         <a href="historique.php"><h2>Gérer mes RDV</h2></a>
                     </button>
+                    <a href="Header/logout.php">
+                        <button class="flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm shadow-md hover:bg-gray-300 transition-colors duration-200">
+                            <i class="fa-solid fa-right-from-bracket text-sm"></i>
+                            <span class="font-medium">Déconnexion</span>
+                        </button>
+                    </a>
                 </div>
             <?php endif; ?>
         </div>
