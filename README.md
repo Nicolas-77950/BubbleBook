@@ -1,51 +1,33 @@
-# BubbleBook
+# BubbleBook 🐾
 
-## Description
+[![PHP Version](https://img.shields.io/badge/PHP-8.0+-8892BF.svg)](https://php.net/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3.0-06B6D4.svg)](https://tailwindcss.com)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-BubbleBook est une application web conçue pour une prises de rendez-vous chez vos toiletteurs préférés.
+## 🌍 Français / English
 
-## Installation
+### ✨ Fonctionnalités / Features
+- 🔍 **Recherche géolocalisée** / Geolocated search
+- 🐶 **Filtres par animal** (chiens, chats, NAC) / **Pet filters** (dogs, cats, small pets)
+- 📅 **Rendez-vous en ligne** / Online booking
+- ⭐ **Avis vérifiés** / Verified reviews
+- 📱 **Mobile friendly** / Responsive design
 
-Pour installer et exécuter ce projet, tu auras besoin de :
+### 🛠 Stack Technique / Tech Stack
+- **Backend**: PHP 8.0+
+- **Frontend**: Tailwind CSS + JavaScript
+- **Base de données** / **Database**: MySQL
+- **Serveur** / **Server**: Nginx/Apache
 
-* **PHP** (Dernière version à jour)
-* **Un serveur web** (Apache, Nginx, etc.)
-* **Un système de gestion de base de données** (MySQL)
+### 🚀 Installation / Installation
 
+#### Prérequis / Requirements
+- Docker + Docker Compose
+- PHP 8.0+
+- Composer
 
-Voici les étapes d'installation :
-
-1.  **Clone le dépôt :**
-
-    ```bash
-    git clone https://github.com/Nicolas-77950/BubbleBook.git](https://github.com/Nicolas-77950/BubbleBook.git
-    cd BubbleBook
-    ```
-2. **Configuration des services via Docker**
-
-Référez-vous à la documentation ci-dessous
-
-
-```
-https://medium.com/@tech_18484/deploying-a-php-web-app-with-docker-compose-nginx-and-mariadb-d61a84239c0d
-(Source medium.com)
-```
-
-
-## Contributions
-
-Les contributions sont les bienvenues ! Si tu souhaites contribuer au développement de BubbleBook, suis ces étapes :
-
-1.  Fork le dépôt.
-2.  Crée une branche pour ta fonctionnalité : `git checkout -b Feature/ma-fonctionnalite`
-3.  Fais tes modifications et commit : `git commit -m "Ajout de ma fonctionnalité"`
-4.  Push vers ta branche : `git push origin Feature/ma-fonctionnalite`
-5.  Crée une pull request vers la branche `dev` du dépôt principal.
-
-## Auteurs
-
-* Nicolas (Nicolas-77950)
-* Maxence (Maxence-villet)
-* Amandine GUISY (AmandineGUISY)
-* 
-
+#### Méthode Docker (recommandée) / Docker Method (recommended)
+```bash
+git clone https://github.com/Nicolas-77950/BubbleBook.git
+cd BubbleBook
+docker-compose up -d
