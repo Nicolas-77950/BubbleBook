@@ -201,7 +201,7 @@ $userName = isset($_SESSION['first_name']) ? $_SESSION['first_name'] : '';
                             <i class="fas fa-chevron-down text-xs"></i>
                         </button>
                         <div class="dropdown-menu absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-xl py-2 z-10">
-                            <a href="profile.php" class="block px-4 py-2 text-gray-800 hover:bg-pink-50 transition-colors">
+                            <a href="log.php" class="block px-4 py-2 text-gray-800 hover:bg-pink-50 transition-colors">
                                 <i class="fas fa-user mr-2 text-pink-500"></i> Mon profil
                             </a>
                             <a href="calendar.php" class="block px-4 py-2 text-gray-800 hover:bg-pink-50 transition-colors">
@@ -310,7 +310,7 @@ $userName = isset($_SESSION['first_name']) ? $_SESSION['first_name'] : '';
                                   </div>
                                   <?php endif; ?>
                     
-                                  <a href="profile.php" class="bg-pink-500 text-white w-full py-3 rounded-full font-medium hover:bg-pink-400 transition-colors text-center shadow-md flex items-center justify-center">
+                                  <a href="log.php" class="bg-pink-500 text-white w-full py-3 rounded-full font-medium hover:bg-pink-400 transition-colors text-center shadow-md flex items-center justify-center">
                                       <i class="fas fa-user mr-2"></i>
                                       <span>Mon profil</span>
                                   </a>
