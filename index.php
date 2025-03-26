@@ -3,58 +3,28 @@
 ?>
 
 <body class="bg-gray-50 min-h-screen flex flex-col">
-  <div class="relative h-[650px] bg-cover bg-center w-full" style="background-image: url('Header/image.png')">
-
-    <div class="absolute inset-0 bg-gradient-to-b from-black/50 to-pink-900/30"></div>
-    <div class="pt-28"></div>
-    
-    <div class="relative z-10 flex flex-col items-center justify-center h-[400px] text-white text-center px-4 mt-6 animate-fadeIn">
-      <h1 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg leading-tight">
-        Trouvez le <span class="text-pink-200">toiletteur idéal</span> pour votre animal
-      </h1>
-      <p class="text-xl md:text-2xl mb-10 max-w-2xl drop-shadow-lg font-light">
-        Prenez rendez-vous en quelques clics avec les meilleurs professionnels près de chez vous
-      </p>
-      
-      <a href="register.php" class="bg-pink-500 hover:bg-pink-600 text-white font-medium px-8 py-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-105 mb-12">
-        Trouver un toiletteur maintenant
-      </a>
-    </div>
-    
-    <div class="relative z-10 absolute -bottom-8 left-0 right-0 mx-auto max-w-4xl bg-white rounded-xl shadow-2xl p-6 flex flex-wrap justify-center items-center gap-5">
-      <div class="flex items-center space-x-3">
-        <h3 class="text-lg font-bold text-gray-800">Département</h3>
-        <button class="bg-pink-50 border border-pink-200 rounded-full px-4 py-2 hover:bg-pink-100 transition-colors group">
-          <i class="fas fa-chevron-down text-pink-500 group-hover:text-pink-600 transition-colors"></i>
-        </button>
-      </div>
-
-      <div class="flex items-center space-x-3">
-        <h3 class="text-lg font-bold text-gray-800">Ville</h3>
-        <button class="bg-pink-50 border border-pink-200 rounded-full px-4 py-2 hover:bg-pink-100 transition-colors group">
-          <i class="fas fa-chevron-down text-pink-500 group-hover:text-pink-600 transition-colors"></i>
-        </button>
-      </div>
-
-      <div class="flex items-center space-x-3">
-        <h3 class="text-lg font-bold text-gray-800">Animal</h3>
-        <button class="bg-pink-50 border border-pink-200 rounded-full px-4 py-2 hover:bg-pink-100 transition-colors group">
-          <i class="fas fa-chevron-down text-pink-500 group-hover:text-pink-600 transition-colors"></i>
-        </button>
-      </div>
-
-      <div class="flex items-center space-x-3">
-        <h3 class="text-lg font-bold text-gray-800">Race</h3>
-        <button class="bg-pink-50 border border-pink-200 rounded-full px-4 py-2 hover:bg-pink-100 transition-colors group">
-          <i class="fas fa-chevron-down text-pink-500 group-hover:text-pink-600 transition-colors"></i>
-        </button>
-      </div>
-
-      <button class="bg-pink-500 text-white rounded-full px-8 py-3 font-medium hover:bg-pink-600 transition-all duration-300 transform hover:scale-105 shadow-md">
-        Rechercher
-      </button>
-    </div>
+  <div class="relative h-[645px] bg-cover bg-center w-full" style="background-image: url('Header/image.png')">
+  <div class="absolute inset-0 bg-gradient-to-b from-black/50 to-pink-900/30"></div>
+  <div class="pt-28"></div>
+  
+  <div class="relative z-10 flex flex-col items-center justify-center h-[400px] text-white text-center px-4 mt-6 animate-fadeIn">
+    <h1 class="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg leading-tight">
+      Trouvez le <span class="text-pink-200">toiletteur idéal</span> pour votre animal
+    </h1>
+    <p class="text-xl md:text-2xl mb-10 max-w-2xl drop-shadow-lg font-light">
+      Prenez rendez-vous en quelques clics avec les meilleurs professionnels près de chez vous
+    </p>
   </div>
+  
+  <!-- Remplacer la barre de recherche par un gros bouton de recherche -->
+  <div class="relative z-10 absolute -bottom-8 left-0 right-0 mx-auto max-w-4xl">
+    <a href="research.php" class="flex items-center justify-center bg-white rounded-xl shadow-2xl p-6 text-xl font-bold text-gray-800 hover:bg-pink-50 transition-all duration-300 transform hover:scale-105">
+      <i class="fas fa-search text-pink-500 text-2xl mr-4"></i>
+      Rechercher un toiletteur
+      <i class="fas fa-arrow-right text-pink-500 ml-4"></i>
+    </a>
+  </div>
+</div>
 
   <!-- Section À propos -->
   <section class="py-24 bg-white">

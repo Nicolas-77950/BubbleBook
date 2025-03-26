@@ -70,13 +70,52 @@
         <div class="mb-12">
             <h3 class="text-xl font-bold text-center mb-8">Notre équipe</h3>
             
+            <style>
+                .member-avatar {
+                    position: relative;
+                    width: 6rem;
+                    height: 6rem;
+                    border-radius: 50%;
+                    background-color: rgb(251, 207, 232);
+                    border: 4px solid white;
+                    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                    overflow: hidden;
+                }
+                
+                .member-avatar img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                
+                .member-avatar::before {
+                    content: attr(data-initials);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    color: #db2777;
+                    background-color: rgb(251, 207, 232);
+                }
+                
+                .member-avatar img[src] {
+                    position: relative;
+                    z-index: 1;
+                }
+            </style>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="flex flex-col items-center transform transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-24 h-24 bg-pink-200 rounded-full overflow-hidden mb-4 border-4 border-white shadow-lg">
-                        <img src="Footer/membre1.jpg" alt="Photo de Nicolas" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150?text=N'">
+                    <div class="member-avatar mb-4" data-initials="N">
+                        <img src="Footer/membre1.jpg" alt="Photo de Nicolas" class="w-full h-full object-cover">
                     </div>
                     <h4 class="font-bold">Nicolas</h4>
-                    <p class="text-pink-200 text-sm">Développeur Full-Stack</p>
+                    <p class="text-pink-200 text-sm">Développeur Web</p>
                     <div class="flex mt-2 space-x-2">
                         <a href="https://github.com/Nicolas-77950" target="_blank" rel="noopener noreferrer" class="text-white hover:text-pink-200 transition duration-300">
                             <i class="fab fa-github"></i>
@@ -88,11 +127,11 @@
                 </div>
                 
                 <div class="flex flex-col items-center transform transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-24 h-24 bg-pink-200 rounded-full overflow-hidden mb-4 border-4 border-white shadow-lg">
-                        <img src="Footer/membre2.jpg" alt="Photo d'Amandine" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150?text=A'">
+                    <div class="member-avatar mb-4" data-initials="A">
+                        <img src="Footer/membre2.jpg" alt="Photo d'Amandine" class="w-full h-full object-cover">
                     </div>
                     <h4 class="font-bold">Amandine</h4>
-                    <p class="text-pink-200 text-sm">Designer UX/UI</p>
+                    <p class="text-pink-200 text-sm">Développeur Web</p>
                     <div class="flex mt-2 space-x-2">
                         <a href="#" target="_blank" rel="noopener noreferrer" class="text-white hover:text-pink-200 transition duration-300">
                             <i class="fab fa-github"></i>
@@ -104,11 +143,11 @@
                 </div>
                 
                 <div class="flex flex-col items-center transform transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-24 h-24 bg-pink-200 rounded-full overflow-hidden mb-4 border-4 border-white shadow-lg">
-                        <img src="Footer/membre3.jpg" alt="Photo de Maxence" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150?text=M'">
+                    <div class="member-avatar mb-4" data-initials="M">
+                        <img src="Footer/membre3.jpg" alt="Photo de Maxence" class="w-full h-full object-cover">
                     </div>
                     <h4 class="font-bold">Maxence</h4>
-                    <p class="text-pink-200 text-sm">Développeur Back-End</p>
+                    <p class="text-pink-200 text-sm">Développeur Web</p>
                     <div class="flex mt-2 space-x-2">
                         <a href="#" target="_blank" rel="noopener noreferrer" class="text-white hover:text-pink-200 transition duration-300">
                             <i class="fab fa-github"></i>
@@ -120,11 +159,11 @@
                 </div>
                 
                 <div class="flex flex-col items-center transform transition-all duration-300 hover:-translate-y-2">
-                    <div class="w-24 h-24 bg-pink-200 rounded-full overflow-hidden mb-4 border-4 border-white shadow-lg">
-                        <img src="Footer/membre4.jpg" alt="Photo de Damien" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/150?text=D'">
+                    <div class="member-avatar mb-4" data-initials="D">
+                        <img src="Footer/membre4.jpg" alt="Photo de Damien" class="w-full h-full object-cover">
                     </div>
                     <h4 class="font-bold">Damien</h4>
-                    <p class="text-pink-200 text-sm">Développeur Front-End</p>
+                    <p class="text-pink-200 text-sm">Développeur Web</p>
                     <div class="flex mt-2 space-x-2">
                         <a href="#" target="_blank" rel="noopener noreferrer" class="text-white hover:text-pink-200 transition duration-300">
                             <i class="fab fa-github"></i>
@@ -136,7 +175,6 @@
                 </div>
             </div>
         </div>
-        
         
         <!-- Copyright et liens sociaux -->
         <div class="text-center border-t border-pink-400 pt-8">
