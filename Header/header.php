@@ -5,7 +5,7 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 
 $isLoggin = empty($_SESSION);
-$isGroomer = isset($_SESSION['groomer_id']);
+$isGroomer = empty($_SESSION['groomer_id']);
 ?>
 
 <!DOCTYPE html>
