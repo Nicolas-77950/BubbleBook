@@ -214,7 +214,7 @@
         <a href="register.php" class="bg-white text-pink-500 px-8 py-3 rounded-full font-medium hover:bg-pink-100 transition-all duration-300 transform hover:scale-105 shadow-lg">
           S'inscrire
         </a>
-        <a href="connexion.php" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white hover:text-pink-500 transition-all duration-300 transform hover:scale-105">
+        <a href="login.php" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-medium hover:bg-white hover:text-pink-500 transition-all duration-300 transform hover:scale-105">
           Se connecter
         </a>
       </div>
