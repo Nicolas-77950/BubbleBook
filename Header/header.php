@@ -49,7 +49,7 @@ $isGroomer = isset($_SESSION['groomer_id']);
                         <a href="/profil.php"><h2>Profil</h2></a>
                     </button>
                     <button class="bg-white text-pink-600 px-4 py-2 rounded-full text-sm shadow-md hover:bg-pink-100">
-                        <a href="historique.php"><h2>Agenda</h2></a>
+                        <a href="/calendar.php"><h2>Agenda</h2></a>
                     </button>
                     <a href="Header/logout.php">
                         <button class="flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm shadow-md hover:bg-gray-300 transition-colors duration-200">
@@ -103,7 +103,7 @@ $isGroomer = isset($_SESSION['groomer_id']);
                         <a href="/profil.php"><h2>Profil</h2></a>
                     </button>
                     <button class="bg-white text-pink-600 px-4 rounded-full text-sm shadow-md hover:bg-pink-100">
-                        <a href="historique.php"><h2>Agenda</h2></a>
+                        <a href="/calendar.php"><h2>Agenda</h2></a>
                     </button>
                     <a href="Header/logout.php">
                         <button class="flex items-center gap-2 bg-gray-200 text-gray-700 px-4 py-2 rounded-full text-sm shadow-md hover:bg-gray-300 transition-colors duration-200">
@@ -115,7 +115,7 @@ $isGroomer = isset($_SESSION['groomer_id']);
             <?php elseif (!$isLoggin && !$isGroomer) : ?>
                 <div class="flex flex-col items-center text-sm py-2 gap-y-4">
                     <button class="bg-pink-600 text-white px-4 py-2 rounded-full text-sm shadow-md hover:bg-pink-700">
-                        <a href="/profil.php"><h2>Profil</h2></a>
+                        <a href="/calendar.php"><h2>Profil</h2></a>
                     </button>
                     <button class="bg-white text-pink-600 px-4 py-2 rounded-full text-sm shadow-md hover:bg-pink-100">
                         <a href="historique.php"><h2>Gérer mes RDV</h2></a>
