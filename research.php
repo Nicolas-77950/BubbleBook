@@ -1,7 +1,7 @@
 <?php
 // Include the header
 require_once 'Header/header.php';
-require_once 'Database.php';
+require_once 'database.php';
 
 $conn = Database::getConnection(); //connexion to database
 
@@ -42,16 +42,6 @@ try {
     die("Erreur de requête : " . $e->getMessage());
 }
 ?>
-
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rechercher un toiletteur</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
 <body class="bg-gray-100 min-h-screen p-4 sm:p-6 lg:p-8">
     <div class="container mx-auto max-w-5xl bg-white rounded-lg shadow-md p-4 sm:p-6">
         <h1 class="text-xl sm:text-2xl font-bold mb-6 text-center">Rechercher un toiletteur</h1>
@@ -81,7 +71,7 @@ try {
             foreach ($results as $row) {
                 // Create a clickable map to tarif.php with the groomer's ID
                 echo '<a href="tarif.php?groomer_id=' . $row['groomer_id'] . '" class="block bg-white rounded-lg shadow-md p-4 hover:bg-gray-100 transition duration-300">';
-                echo '<h2 class="text-lg font-semibold mb-2">' . htmlspecialchars($row['groomer_name']) . ' (#' . $row['groomer_id'] . ')</h2>';
+                echo '<h2 class="text-lg font-semibold mb-2">' . htmlspecialchars($row['groomer_name']) . '</h2>';
                 echo '<p class="text-sm"><strong>Adresse:</strong> ' . htmlspecialchars($row['address']) . '</p>';
                 echo '<p class="text-sm"><strong>Ville:</strong> ' . htmlspecialchars($row['city']) . '</p>';
                 echo '<p class="text-sm"><strong>Département:</strong> ' . htmlspecialchars($row['department']) . '</p>';
