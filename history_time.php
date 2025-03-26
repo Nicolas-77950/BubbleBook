@@ -2,10 +2,14 @@
 require_once 'database.php';
 require_once 'Header/header.php';
 
-if(!isset($_SESSION['groomer_id'])) {
+session_start();
+
+if(isset($_SESSION['groomer_id'])) {
     $groomer_id = $_SESSION['groomer_id'];
 } else {
-    header("location: login.php");
+    ?>
+        <script>window.location.href("login.php")</script>
+    <?php
 }
 
 try {
@@ -22,8 +26,10 @@ try {
         WHERE Service.groomer_id = :groomer_id AND Booking.is_valdated = 1
         ORDER BY Booking.reservation_date DESC
     ");
+
     $stmt_history->execute(['groomer_id' => $groomer_id]);
     $history_bookings = $stmt_history->fetchAll(PDO::FETCH_ASSOC);
+    
 } catch (PDOException $e) {
     echo "Erreur de connexion : " . $e->getMessage();
     exit;

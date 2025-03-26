@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $message_type = "success";
         } elseif ($action === 'cancel') {
             // Annuler un rendez-vous (is_valdated = 1, is_done = 0)
-            $stmt = $pdo->prepare("UPDATE Booking SET is_valdated = 1, is_done = 0 WHERE booking_id = :booking_id");
+            $stmt = $pdo->prepare("UPDATE Booking SET is_valdated = 1, is_done = NULL WHERE booking_id = :booking_id");
             $stmt->execute(['booking_id' => $booking_id]);
             $message = "Rendez-vous annulé.";
             $message_type = "success";

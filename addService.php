@@ -1,11 +1,8 @@
 <?php
-// Connexion à la base de données
-$host = 'bubblebook-project-db-1';
-$dbname = 'bubble';
-$username = 'root'; // À modifier selon votre configuration
-$password = 'mariadb'; // À modifier selon votre configuration
+require_once "database.php";
 
 session_start();
+var_dump($_SESSION);
 
 if(isset($_SESSION['groomer_id'])) {
     $groomer_id = $_SESSION['groomer_id'];
@@ -14,7 +11,7 @@ if(isset($_SESSION['groomer_id'])) {
 }
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $pdo = Database::getConnection();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     // Vérifier si le formulaire a été soumis
@@ -39,7 +36,11 @@ try {
         ]);
         
         // Redirection vers la page tarif.php avec le groomer_id
-        header("Location: tarif.php?groomer_id=" . $groomer_id);
+        ?>
+            <script>
+                window.location.href = "tarif.php?groomer_id=<?php echo $groomer_id; ?>";
+            </script>
+        <?php
         exit;
     }
     
