@@ -1,9 +1,9 @@
 <?php
 // Connexion à la base de données
-$host = 'bubblebook-project-db-1';
+$host = 'localhost';
 $dbname = 'bubble';
 $username = 'root'; // À modifier selon votre configuration
-$password = 'mariadb'; // À modifier selon votre configuration
+$password = ''; // À modifier selon votre configuration
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -35,7 +35,7 @@ require_once 'Header/header.php';
                 Groomer.address, 
                 Groomer.city, 
                 Groomer.department,
-                Groomer.siren_number,
+                Groomer.siret_number,
                 Groomer.address AS groomer_address,
                 Groomer.city AS groomer_city,
                 Groomer.department AS groomer_department
