@@ -5,13 +5,20 @@ $dbname = 'bubble';
 $username = 'root'; // À modifier selon votre configuration
 $password = 'mariadb'; // À modifier selon votre configuration
 
+session_start();
+
+if(isset($_SESSION['groomer_id'])) {
+    $groomer_id = $_SESSION['groomer_id'];
+} else {
+    header("location: login.php");
+}
+
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     // Vérifier si le formulaire a été soumis
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $groomer_id = 1;
         $service_name = $_POST['service_name'];
         $duration = $_POST['duration'];
         $price_ht = $_POST['price_ht'];
@@ -36,8 +43,6 @@ try {
         exit;
     }
     
-    // Récupérer le groomer_id depuis l'URL
-    $groomer_id = isset($_GET['groomer_id']) ? $_GET['groomer_id'] : null;
     
 } catch (PDOException $e) {
     echo "Erreur de connexion : " . $e->getMessage();

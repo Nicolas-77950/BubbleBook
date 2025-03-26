@@ -1,31 +1,51 @@
 # BubbleBook
-BubbleBook est un projet permettant d'avoir un annuaire des toiletteurs aux alentours. Il est réalisé en React avec un typpage static, une base de données en SQLLite.
 
-## Prérequis
+## Description
 
--   `yarn` installés: Assure-toi d'avoir la dernière version de yarn installée sur ton ordinateur. Tu peux vérifier en ouvrant ton terminal et en tapant yarn -v.   
--   Une bonne compréhension de base de `JavaScript`: Avoir des notions de JavaScript est essentiel pour travailler avec React et TypeScript.   
--   Un éditeur de code: `Visual Studio Code`.
+BubbleBook est une application web conçue pour une prises de rendez-vous chez vos toiletteurs préférés.
 
-## Installation de `Yarn`
+## Installation
 
--   Installation de npm requis ([https://nodejs.org/en](https://nodejs.org/en))
--   Installation de yarn :
+Pour installer et exécuter ce projet, tu auras besoin de :
 
-		npm install --global yarn
+* **PHP** (Dernière version à jour)
+* **Un serveur web** (Apache, Nginx, etc.)
+* **Un système de gestion de base de données** (MySQL)
 
-## Installation du projet
 
-- Aller sur l'url du projet :
+Voici les étapes d'installation :
 
-		https://github.com/Nicolas-77950/BubbleBook
+1.  **Clone le dépôt :**
 
-- Cloner le repository : 
+    ```bash
+    git clone https://github.com/Nicolas-77950/BubbleBook.git](https://github.com/Nicolas-77950/BubbleBook.git
+    cd BubbleBook
+    ```
+2. **Configuration des services via Docker**
 
-		https://github.com/Nicolas-77950/BubbleBook.git
-		
-		OR
-		
-		git@github.com:Nicolas-77950/BubbleBook.git
+Référez-vous à la documentation ci-dessous
 
-- Aller dans le terminal, éxécuter la commande `yarn install`, puis `yarn start`. Vous devriez avoir accès au projet.
+
+```
+https://medium.com/@tech_18484/deploying-a-php-web-app-with-docker-compose-nginx-and-mariadb-d61a84239c0d
+(Source medium.com)
+```
+
+
+## Contributions
+
+Les contributions sont les bienvenues ! Si tu souhaites contribuer au développement de BubbleBook, suis ces étapes :
+
+1.  Fork le dépôt.
+2.  Crée une branche pour ta fonctionnalité : `git checkout -b Feature/ma-fonctionnalite`
+3.  Fais tes modifications et commit : `git commit -m "Ajout de ma fonctionnalité"`
+4.  Push vers ta branche : `git push origin Feature/ma-fonctionnalite`
+5.  Crée une pull request vers la branche `dev` du dépôt principal.
+
+## Auteurs
+
+* Nicolas (Nicolas-77950)
+* Maxence (Maxence-villet)
+* Amandine GUISY (AmandineGUISY)
+* 
+

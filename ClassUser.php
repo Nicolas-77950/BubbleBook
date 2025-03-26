@@ -73,4 +73,40 @@ class User {
             return [500, "Erreur de base de données : " . $e->getMessage()];
         }
     }
+
+    public function login($email, $password) {
+        try {
+            // verify if the user exist, the mail is unique in the database
+            $stmt = $this->db->prepare("SELECT password FROM User WHERE email = :email");
+            $stmt->execute(['email' => $email]);
+
+            if ($stmt->rowCount() != 1) {
+                return [400, 'Mot de passe ou Adresse Mail invalide'];
+            }
+
+            $p = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if (password_verify($password, $p['password'])) {
+                // if the password is the same as the password found with the mail, then it start a session
+                $stmt = $this->db->prepare("SELECT email, groomer_id, user_id FROM User WHERE email = :email");
+                $stmt->execute(['email' => $email]);
+                $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                return [200, "Connexion réussie ! Redirection à la page d'accueil en cours ...", $user];
+            } else {
+                return [400, "Mot de passe ou Adresse Mail invalide"];
+            }
+        } catch (PDOException $e) {
+            return [500, "Erreur de base de données : " . $e->getMessage()];
+        }
+    }
+
+    public function logout() {
+
+        if (session_status() === PHP_SESSION_NONE) {session_start();} // if the session is not started yet 
+
+        $_SESSION = []; // the session is empty
+        session_destroy(); // destroy the session
+        session_regenerate_id(true); // securisation of the regeneration of id
+    }
 }
